@@ -5,7 +5,6 @@
   "main": "app.js",
   "scripts": {
     "start": "node ./app.js"
-
   },
   "repository": {
     "type": "git",
@@ -19,6 +18,7 @@
   "homepage": "https://github.com/Slelp/slelp#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "dotenv": "^4.0.0",
     "express": "^4.16.2",
     "hbs": "^4.0.1",
     "knex": "^0.13.0",
