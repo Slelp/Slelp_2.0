@@ -1,0 +1,27 @@
+{
+  "name": "slelp",
+  "version": "1.0.0",
+  "description": "slelp helps",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Slelp/slelp.git"
+  },
+  "author": "Punchface Champions",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Slelp/slelp/issues"
+  },
+  "homepage": "https://github.com/Slelp/slelp#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "hbs": "^4.0.1",
+    "knex": "^0.13.0",
+    "pg": "^7.3.0"
+  }
+}
