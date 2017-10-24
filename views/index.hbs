@@ -32,11 +32,12 @@
                 <span class="caret"></span>
               </button>
 
-              <form id="create" class="hide" action="" method="post" style="display: none;">
-                  <input type="text" name="" placeholder="username">
-                  <h5 class="error">{{createError}}</h5>
-                  <input type="text" name="" placeholder="password">
-                  <input type="text" name="" placeholder="group code">
+
+              <form id="create" class="hide" action="/create" method="post" style="display: none;">
+                  <input type="text" name="username" placeholder="username">
+                  <input type="text" name="password" placeholder="password">
+                  <input type="text" name="group_code" placeholder="group code">
+                  <h1>{{error}}</h1>
 
                 <button class="submit" type="submit" name="button">
                   Submit
@@ -52,12 +53,13 @@
                 <span class="caret"></span>
               </button>
 
-              <form id="login" class="hide" action="" method="post" style="display: none;">
 
-                  <input type="text" name="" placeholder="username">
-                  <input type="text" name="" placeholder="password">
-                  <h5 class="error">{{loginError}}</h5>
+              <form id="login" class="hide" action="/main" method="post" style="display: none;">
 
+
+                  <input type="text" name="username" placeholder="username">
+                  <input type="text" name="password" placeholder="password">
+                  <h1>{{loginError}}</h1>
                 <button class="submit" type="submit" name="button">
                   Submit
                 </button>
