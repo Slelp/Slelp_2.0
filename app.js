@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const db = require('./db/query');
 const port = process.env.PORT || 3000;
 const app = express();
-// var = 
+// var =
 
 app.use(bodyParser.urlencoded({
   extended: false
@@ -53,6 +53,9 @@ app.post('/create', (req, res) => {
               createError: 'Username is taken'
             });
           }
+        })
+        .catch(err => {
+          console.log(err);
         });
 });
 
