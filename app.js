@@ -4,13 +4,15 @@ const pages = require('./routes/pages');
 const bodyParser = require('body-parser');
 
 const db = require('./db/query');
-
+// use heroku or local host
 const port = process.env.PORT || 3000;
 const app = express();
 
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.use(bodyParser.json());
+
+app.use(express.static(__dirname + '/public'));
 
 hbs.registerPartials(__dirname + '/views/partials');
 
