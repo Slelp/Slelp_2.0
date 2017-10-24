@@ -32,7 +32,7 @@
     align-items: center;
     margin-top: 10%;
   }
-  .info{
+  #info {
     height: 8rem;
     width: 8rem;
     background-color: #333;
@@ -45,7 +45,7 @@
     justify-content: flex-end;
     align-items: flex-end;
   }
-  .info:hover {
+  #info:hover {
     box-shadow: 2px 2px 5px white;
   }
   .arrow{
@@ -120,7 +120,7 @@
     font-size: 40px;
     font-family: 'Rokkitt', serif;
   }
-  .error {
+  .error{
     font-size: 35px;
     color: white;
     padding: 0;
@@ -155,93 +155,83 @@
     width: 0;
     height: 0;
   }
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: .8;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  .sidenav a {
+    padding: 25px 8px 8px 25px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  #mySideNav {
+    width: 80vw;
+    height: auto;
+  }
+  #info-container {
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-flow: wrap;
+  }
+  .description {
+    width: 100%;
+    font-size: 40px;
+    margin: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap;
+    font-family: 'Rokkitt', serif;
+  }
+  .description > h3 {
+    font-family: 'Pacifico', cursive;
+    padding-left: .8rem;
+    letter-spacing: 2px;
+  }
+  .github-links{
+    width: 100%;
+    display: flex;
+    align-self: flex-end;
+    justify-content: flex-end;
+    padding-right: 2rem;
+  }
+  .github-logo {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    padding: 20px;
+  }
+  .github {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    padding: 2px;
+    opacity: 1;
+  }
+
 }
-
-
-/*#login-container {
-  height: 95vh;
-  width: 70vw;
-  border: 2px solid blue;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}*/
-
-/*input {
-  width: 90%;
-  margin-top: 5%;
-}
-
-#logo {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-#info-login-container {
-  height: 100vh;
-  width: auto;
-  display: flex;
-  align-items: flex-start;
-}
-
-#info-container {
-  height: 95vh;
-  width: 30vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #333;
-  opacity: .8;
-  color: white;
-}
-
-
-.login-create-box {
-  width: 40vw;
-  border: 2px solid blue;
-  border-radius: 15px;
-}
-
-.title{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-.login-form, .create-form {
-  width: auto;
-  height: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-flow: wrap;
-}
-
-.login-form {
-  border-top: 1px solid black;
-}
-
-#create, #login {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-flow: wrap;
-  margin-top: -20px;
-}
-
-button {
-  margin: 15px;
-  width: 90%;
-  background-color: blue;
-  border-style: none;
-  border-radius: 4px;
-  color: white;
-}
-
-footer {
-  height: 5%;
-  width: 100%;
-}*/
