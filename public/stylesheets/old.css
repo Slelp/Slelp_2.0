@@ -129,26 +129,9 @@ a {
   color: black;
 }
 
-.github {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  padding: 5px;
-  opacity: 1;
-}
 
-.github-logo {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  padding: 1px;
-}
 
-.github:hover {
-  width: 7rem;
-  height: 7rem;
-  padding: 10px;
-}
+
 
 .copy {
   margin-right: 1em;

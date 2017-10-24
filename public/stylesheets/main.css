@@ -4,7 +4,7 @@
   }
   body{
     height: 100vh;
-    background-image: url('public/images/Blue-Background-For-iPhone-5s-.jpg');
+    background-image: url('/images/Blue-Background-For-iPhone-5s-.jpg');
     background-size: cover;
     margin: 0;
   }

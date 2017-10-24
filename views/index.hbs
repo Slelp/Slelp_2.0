@@ -10,18 +10,65 @@
 
 <body>
   <header>
-    <div class="info">
-      <div class="arrow">
-
-      </div>
+    <div id="info">
+        <span class="arrow" style="font-size:30px;cursor:pointer" onclick="openNav()"></span></span>
     </div>
   </header>
+
+  <div id="mySidenav" class="sidenav">
+    <a class="closebtn" onclick="closeNav()">&times;</a>
+    <div id="info-container">
+
+          <div class="description">
+              <h4>Welcome to  </h4>
+              <h3>  Slelp</h3>
+              <h6>need to add a description of the app</h6>
+          </div>
+
+          <div class="github-links">
+            <div class="github-container">
+              <img class="github-logo" src="/images/icon-github.png" alt="">
+            </div>
+
+            <div class="github-container">
+                <a href="https://github.com/kylegibson15">
+                  <img class="github" src="/images/githubimg-kyle.jpeg" alt="">
+                </a>
+            </div>
+
+            <div class="github-container">
+                <a href="https://github.com/kalaver8">
+                  <img class="github" src="/images/githubimg-kelsey.jpeg" alt="">
+                </a>
+            </div>
+
+            <div class="github-container">
+                <a href="https://github.com/LukeRomberg">
+                  <img class="github" src="/images/githubimg-luke.jpeg" alt="">
+                </a>
+            </div>
+
+            <div class="github-container">
+                <a href="https://github.com/xaishinn">
+                  <img class="github" src="/images/githubimg-leo.jpeg" alt="">
+                </a>
+            </div>
+
+            <div class="github-container">
+                <a href="https://github.com/jordanreed23">
+                  <img class="github" src="/images/githubimg-jordan.jpeg" alt="">
+                </a>
+            </div>
+
+          </div>
+        </div>
+  </div>
   <main>
 
       <div id="container">
         <div id="login-container">
           <div id="logo">
-            <h1>Slelp</h1>
+            <h1>Slelp App</h1>
           </div>
 
           <div class="login-create-box">
@@ -32,12 +79,11 @@
                 <span class="caret"></span>
               </button>
 
-            <!-- ACTION MUST BE /CREATE -->
               <form id="create" class="hide" action="/create" method="post" style="display: none;">
                   <input type="text" name="username" placeholder="username">
                   <input type="text" name="password" placeholder="password">
                   <input type="text" name="group_code" placeholder="group code">
-                  <h1>{{error}}</h1>
+                  <h1>{{createError}}</h1>
 
                 <button class="submit" type="submit" name="button">
                   Submit
@@ -52,7 +98,6 @@
                 <h2>Login</h2>
                 <span class="caret"></span>
               </button>
-
 
               <form id="login" class="hide" action="/main" method="post" style="display: none;">
 
@@ -76,109 +121,7 @@
       <a href="https://github.com/Slelp/slelp"><h3>&copy;PFC, inc.</h3></a>
     </div>
   </footer>
-<script type="text/javascript" src="/javascript/index.js">
-
-</script>
+<script type="text/javascript" src="/javascript/index.js"></script>
 </body>
 
 </html>
-<!-- <!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="/stylesheets/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
-
-  <title>Slelp</title>
-</head>
-
-<body>
-  <main>
-
-      <div id="info-login-container">
-        <div id="info-container">
-          <div class="description">
-              <h4>Welcome to Slelp</h4>
-              <h6>need to add a description of the app</h6>
-          </div>
-          <div class="github-links">
-            <div class="github-container">
-              <img class="github-logo" src="/images/icon-github.png" alt="">
-            </div>
-            <div class="github-container">
-                <a href="https://github.com/kylegibson15">
-                  <img class="github" src="/images/githubimg-kyle.jpeg" alt="">
-                </a>
-            </div>
-            <div class="github-container">
-                <a href="https://github.com/kalaver8">
-                  <img class="github" src="/images/githubimg-kelsey.jpeg" alt="">
-                </a>
-            </div>
-            <div class="github-container">
-                <a href="https://github.com/LukeRomberg">
-                  <img class="github" src="/images/githubimg-luke.jpeg" alt="">
-                </a>
-            </div>
-            <div class="github-container">
-                <a href="https://github.com/xaishinn">
-                  <img class="github" src="/images/githubimg-leo.jpeg" alt="">
-                </a>
-            </div>
-            <div class="github-container">
-                <a href="https://github.com/jordanreed23">
-                  <img class="github" src="/images/githubimg-jordan.jpeg" alt="">
-                </a>
-            </div>
-          </div>
-
-        </div>
-
-        <div id="login-container">
-          <div id="logo">
-            <h1>SLELP (LOGO)</h1>
-          </div>
-
-          <div class="login-create-box">
-            <div class="create-form">
-              <div class="title">
-                <h2>Create Account</h2>
-              </div>
-
-              <form id="create" action="" method="post">
-
-                  <input type="text" name="" placeholder="username">
-                  <input type="text" name="" placeholder="password">
-                  <input type="text" name="" placeholder="group code">
-
-                <button type="submit" name="button">Create</button>
-              </form>
-            </div>
-
-            <div class="login-form">
-              <div class="title">
-                <h2>Login</h2a>
-              </div>
-              <form id="login" action="" method="post">
-
-                  <input type="text" name="" placeholder="username">
-                  <input type="text" name="" placeholder="password">
-
-                <button type="submit" name="button">Login</button>
-              </form>
-
-            </div>
-          </div>
-          <div class="foot-container">
-            <div class="copy">
-              <a href="https://github.com/Slelp/slelp"><h4>&copy;PFC, Inc.</h4></a>
-            </div>
-          </div>
-        </div>
-      </div>
-  </main>
-
-</body>
-
-</html> -->
