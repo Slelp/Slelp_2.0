@@ -9,3 +9,5 @@ exports.seed = function(knex, Promise) {
       ]);
     });
 };
+
+// remove getTime Tuesday
