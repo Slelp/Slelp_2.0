@@ -2,8 +2,34 @@ body{
   height: 100%;
   overflow: hidden;
   margin: 0;
+  background-image: url('/images/Orange_Background_by_Vik_for_Stuff.png');
+  background-size: stretch;
+  font-family: 'Droid Sans', sans-serif;
 }
 
+@media only screen and (max-device-width: 736px) {
+
+  #info-container {
+    display: none;
+  }
+
+  #login-container {
+    height: 100vh;
+    width: 100vw;
+  }
+}
+@media only screen and (min-device-width: 737px) {
+
+  #login-container {
+    height: 100vh;
+    width: 70vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+}
 input {
   width: 90%;
   margin-top: 5%;
@@ -30,30 +56,16 @@ input {
   justify-content: center;
   align-items: center;
   background-color: #333;
-  opacity: .8;
-}
-
-.description {
-  /*display: flex;
-  align-items: center;
-  justify-content: center;*/
+  opacity: .9;
   color: white;
 }
 
-#login-container {
-  height: 100vh;
-  width: 70vw;
-  border: 2px solid blue;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
 
 .login-create-box {
   width: 40vw;
   border: 2px solid blue;
   border-radius: 15px;
+  background-color: white;
 }
 
 .title{
@@ -90,4 +102,54 @@ button {
   border-style: none;
   border-radius: 4px;
   color: white;
+}
+
+.foot-container {
+  position: fixed;
+  bottom: 0;
+  width: 70vw;
+  height: 10vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.github-links {
+  position: fixed;
+  bottom: 0;
+  width: 30vw;
+  height: 10vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.github {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  padding: 5px;
+  opacity: 1;
+}
+
+.github-logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  padding: 1px;
+}
+
+.github:hover {
+  width: 7rem;
+  height: 7rem;
+  padding: 10px;
+}
+
+.copy {
+  margin-right: 1em;
 }
