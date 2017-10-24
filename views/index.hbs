@@ -4,6 +4,86 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="/stylesheets/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Droid+Sans|Pacifico|Rokkitt" rel="stylesheet">
+  <title>Slelp</title>
+</head>
+
+<body>
+  <header>
+    <div class="info">
+      <div class="arrow">
+
+      </div>
+    </div>
+  </header>
+  <main>
+
+      <div id="container">
+        <div id="login-container">
+          <div id="logo">
+            <h1>Slelp</h1>
+          </div>
+
+          <div class="login-create-box">
+            <div class="create-form">
+
+              <button onclick="toggleCreateForm()" class="title">
+                <h2>Create Account</h2>
+                <span class="caret"></span>
+              </button>
+
+              <form id="create" class="hide" action="" method="post" style="display: none;">
+                  <input type="text" name="" placeholder="username">
+                  <input type="text" name="" placeholder="password">
+                  <input type="text" name="" placeholder="group code">
+
+                <button class="submit" type="submit" name="button">
+                  Submit
+                </button>
+
+              </form>
+            </div>
+
+            <div class="login-form">
+
+              <button onclick="toggleLoginForm()" class="title">
+                <h2>Login</h2>
+                <span class="caret"></span>
+              </button>
+
+              <form id="login" class="hide" action="" method="post" style="display: none;">
+
+                  <input type="text" name="" placeholder="username">
+                  <input type="text" name="" placeholder="password">
+
+                <button class="submit" type="submit" name="button">
+                  Submit
+                </button>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+  </main>
+
+  <footer>
+    <div class="foot">
+      <a href="https://github.com/Slelp/slelp"><h3>&copy;PFC, inc.</h3></a>
+    </div>
+  </footer>
+<script type="text/javascript" src="/javascript/index.js">
+
+</script>
+</body>
+
+</html>
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/stylesheets/style.css">
   <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
   <title>Slelp</title>
 </head>
@@ -96,4 +176,4 @@
 
 </body>
 
-</html>
+</html> -->
