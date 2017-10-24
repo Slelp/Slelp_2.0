@@ -1,36 +1,167 @@
-body{
-  height: 100%;
-  overflow: hidden;
-  margin: 0;
-  background-image: url('/images/Orange_Background_by_Vik_for_Stuff.png');
-  background-size: stretch;
-  font-family: 'Droid Sans', sans-serif;
-}
-
-@media only screen and (max-device-width: 736px) {
-
-  #info-container {
-    display: none;
-  }
-
-  #login-container {
+/*@media only screen and (max-device-width: 736px) {*/
+  body{
     height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    background-image: url('/images/Blue-Background-For-iPhone-5s-.jpg');
+    background-size: cover;
+  }
+  footer {
+    position: fixed;
     width: 100vw;
+    height: 8rem;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
   }
-}
-@media only screen and (min-device-width: 737px) {
-
+  .foot {
+    padding-right: 2rem;
+  }
+  .foot > a {
+    text-decoration: none;
+    color: white;
+    opacity: .5;
+    font-size: 30px;
+    font-family: 'Rokkitt', serif;
+    letter-spacing: 2px;
+  }
+  #container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+  }
+  .info{
+    height: 8rem;
+    width: 8rem;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    opacity: .5;
+    font-size: 28px;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  .info:hover {
+    box-shadow: 2px 2px 5px white;
+  }
+  .arrow{
+    width: 3rem;
+    height: 3rem;
+    border-right: 5px solid white;
+    border-bottom: 5px solid white;
+    margin: 2rem;
+  }
   #login-container {
-    height: 100vh;
-    width: 70vw;
+    display: flex;
+    flex-flow: wrap;
+    width: 90vw;
+  }
+  #logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #DD7016;
+    font-family: 'Pacifico', cursive;
+    font-size: 60px;
+    text-shadow: 2px 2px 8px white;
+  }
+  .login-create-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap;
+  }
+  .login-form, .create-form {
+    display: flex;
+    flex-flow: wrap;
+    width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+  .title {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    width: 100%;
+    height: 7rem;
+    border: 1px solid #212121;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    border-radius: 14px;
+    font-size: 40px;
+    background-color: #FFA159;
+    color: #0676A3;
+    font-family: 'Rokkitt', serif;
   }
+  .title:hover {
+    background-color: #D98324;
+    color: white;
+  }
+  #create, #login {
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap;
+  }
+  input {
+    width: 100%;
+    height: 4.5rem;
+    border: 1px solid blue;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    padding-left: 1rem;
+    font-size: 40px;
+    font-family: 'Rokkitt', serif;
+  }
+  .submit {
+    margin-top: .5rem;
+    width: 50%;
+    height: 5rem;
+    border-radius: 16px;
+    background-color: white;
+    color: #0676A3;
+    font-size: 40px;
+    border-style: none;
+    border: .5px solid white;
+  }
+  button > h2 {
+    margin: 0;
+    margin-right: 2rem;
+    text-shadow: 2px 2px 8px white;
+  }
+  button > h2:hover {
+    text-shadow: none;
+  }
+  .caret {
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    vertical-align: middle;
+    border-top: 10px dashed;
+    display: inline-block;
+    width: 0;
+    height: 0;
+  }
+/*}*/
 
-}
-input {
+
+/*#login-container {
+  height: 95vh;
+  width: 70vw;
+  border: 2px solid blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}*/
+
+/*input {
   width: 90%;
   margin-top: 5%;
 }
@@ -50,13 +181,13 @@ input {
 }
 
 #info-container {
-  height: 100vh;
+  height: 95vh;
   width: 30vw;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #333;
-  opacity: .9;
+  opacity: .8;
   color: white;
 }
 
@@ -65,7 +196,6 @@ input {
   width: 40vw;
   border: 2px solid blue;
   border-radius: 15px;
-  background-color: white;
 }
 
 .title{
@@ -104,52 +234,7 @@ button {
   color: white;
 }
 
-.foot-container {
-  position: fixed;
-  bottom: 0;
-  width: 70vw;
-  height: 10vh;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-}
-
-.github-links {
-  position: fixed;
-  bottom: 0;
-  width: 30vw;
-  height: 10vh;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
-.github {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  padding: 5px;
-  opacity: 1;
-}
-
-.github-logo {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  padding: 1px;
-}
-
-.github:hover {
-  width: 7rem;
-  height: 7rem;
-  padding: 10px;
-}
-
-.copy {
-  margin-right: 1em;
-}
+footer {
+  height: 5%;
+  width: 100%;
+}*/
