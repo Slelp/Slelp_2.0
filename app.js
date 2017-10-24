@@ -46,6 +46,9 @@ app.post('/create', (req, res) => {
                       createError: 'Account created. Confirm login below.'
                     });
                   })
+                  .catch( err => {
+                    console.log(err);
+                  });
                 }
               });
           } else {
