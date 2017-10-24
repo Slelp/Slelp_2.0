@@ -1,0 +1,137 @@
+@media only screen and (max-device-width: 736px) {
+  html,body{
+    height: 100%;
+  }
+  body{
+    height: 100vh;
+    background-image: url('public/images/Blue-Background-For-iPhone-5s-.jpg');
+    background-size: cover;
+    margin: 0;
+  }
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 18rem;
+    display: flex;
+    flex-flow: wrap;
+    overflow: hidden;
+  }
+  .user-info {
+    width: 100vw;
+    height: 50%;
+  }
+  #logo {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #DD7016;
+    font-family: 'Pacifico', cursive;
+    font-size: 10px;
+    text-shadow: 2px 2px 8px white;
+  }
+  #add-search-container {
+    height: 50%;
+    width: 100vw;
+    align-self: flex-end;
+    display: flex;
+    justify-content: space-around;
+  }
+  .add-help > h1 {
+    font-size: 40px;
+    font-family: 'Rokkitt', serif;
+  }
+  .add-help, .search {
+    height: 100%;
+    width: 40%;
+    border: .5px solid black;
+    border-radius: 20px;
+    background-color: #D98324;
+    margin-bottom: .5rem;
+
+  }
+  .search-img {
+    height: 5rem;
+    width: 5rem;
+  }
+  section{
+    position: relative;
+    top: 18rem;
+    bottom: 5rem;
+    height: 78%;
+    width: 100%;
+    margin: 0;
+    overflow-y: scroll;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .help-container {
+    width: 90%;
+    height:15rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: white;
+    box-shadow: 5px 5px 15px black;
+    flex-wrap: wrap;
+    margin: .5rem;
+    margin-top: 3rem;
+  }
+  .solutions-answerbtn {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .answer-solutions{
+    width: 50%;
+  }
+  a{
+    font-size: 32px;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: orange;
+    text-align: center;
+  }
+  h3 {
+    font-size: 40px;
+    margin: 0;
+    margin-left: .5rem;
+    font-family: 'Rokkitt', serif;
+  }
+  h5 {
+    font-size: 35px;
+    margin: 0;
+    margin-left: .5rem;
+    font-family: 'Rokkitt', serif;
+  }
+  .username {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0;
+  }
+  .question-head {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 5rem;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-flow: wrap;
+    border: 1px solid black;
+    background-color: black;
+  }
+}
