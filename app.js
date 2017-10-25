@@ -200,5 +200,24 @@ function cleanHelps(oneHelp) {
     });
 }
 
+app.post('/createHelp', (req, res) => {
+
+  var newHelp = {
+    group_id: mainData.group_id,
+    title: req.body.title,
+    description: req.body.body,
+    link: req.body.link,
+    user_id: mainData.user_id,
+    timestamp: new Date().getTime(),
+    readableTime: new Date(),
+  };
+  db.createHelp(newHelp)
+  .then(help => {
+    res.render('main')
+    console.log(help);
+  })
+  .catch(err => {console.log(err);})
+});
+
 app.listen(port, () => console.log(`Slelp listening on port:
   ${port}`));
