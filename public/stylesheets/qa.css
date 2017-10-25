@@ -203,6 +203,23 @@ a{
   background-color: orange;
   text-align: center;
 }
+.form-float{
+  position: fixed;
+  bottom: 5rem;
+  right: 0;
+  width: 8rem;
+  height: 8rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-left: 1px solid white;
+  border-top: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.float{
+  color: white;
+  font-size: 40px;
+}
 h3, h4 {
   font-size: 40px;
   margin: 0;
