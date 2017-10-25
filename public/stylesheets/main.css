@@ -7,40 +7,59 @@
     background-image: url('/images/Blue-Background-For-iPhone-5s-.jpg');
     background-size: cover;
     margin: 0;
+    /*overflow: hidden;*/
   }
   header {
     position: fixed;
     top: 0;
     left: 0;
-    height: 18rem;
+    height: 20rem;
     display: flex;
     flex-flow: wrap;
     overflow: hidden;
   }
   .user-info {
     width: 100vw;
-    height: 50%;
+    height: 45%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 5px solid white;
+    margin-bottom: 1rem;
   }
-  #logo {
-    width: 20%;
+  #logo{
+    width: 33%;
+    height: 8rem;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #DD7016;
     font-family: 'Pacifico', cursive;
-    font-size: 10px;
+    font-size: 40px;
     text-shadow: 2px 2px 8px white;
   }
+  .group, .user {
+    width: 33%;
+    height: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #212121;
+    font-family: 'Rokkitt', serif;
+    font-size: 30px;
+    color: white;
+  }
   #add-search-container {
-    height: 50%;
+    height: 45%;
     width: 100vw;
     align-self: flex-end;
     display: flex;
     justify-content: space-around;
+    padding-bottom: 2rem;
   }
   .add-help > h1 {
     font-size: 40px;
-    font-family: 'Rokkitt', serif;
+    font-family: 'Rokkitt';
   }
   .add-help, .search {
     height: 100%;
@@ -48,8 +67,9 @@
     border: .5px solid black;
     border-radius: 20px;
     background-color: #D98324;
-    margin-bottom: .5rem;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .search-img {
     height: 5rem;
@@ -57,9 +77,9 @@
   }
   section{
     position: relative;
-    top: 18rem;
+    top: 20rem;
     bottom: 5rem;
-    height: 78%;
+    height: 77%;
     width: 100%;
     margin: 0;
     overflow-y: scroll;
@@ -68,6 +88,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-flow: wrap;
   }
   .help-container {
     width: 90%;
@@ -92,7 +113,7 @@
   }
   a{
     font-size: 32px;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     border-radius: 15px;
     background-color: orange;
     text-align: center;
@@ -101,13 +122,13 @@
     font-size: 40px;
     margin: 0;
     margin-left: .5rem;
-    font-family: 'Rokkitt', serif;
+    font-family: 'Rokkitt';
   }
   h5 {
     font-size: 35px;
     margin: 0;
     margin-left: .5rem;
-    font-family: 'Rokkitt', serif;
+    font-family: 'Rokkitt';
   }
   .username {
     width: 100%;
@@ -130,7 +151,28 @@
     width: 100%;
     overflow: hidden;
     display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
     flex-flow: wrap;
     border: 1px solid black;
-    background-color: black;
+    background-color: #333;
+    opacity: .8;
+    border-top: 4px solid white;
   }
+  .foot {
+    padding-right: 2rem;
+    padding-bottom: 1rem;
+  }
+  .foot > a {
+    text-decoration: none;
+    color: white;
+    opacity: .5;
+    font-size: 30px;
+    font-family: 'Rokkitt', serif;
+    letter-spacing: 2px;
+  }
+
+@media only screen and (min-device-width: 737px) {
+
+}
+
