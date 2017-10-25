@@ -58,8 +58,15 @@
     justify-content: space-around;
     padding-bottom: 2rem;
   }
+
   .DesktopSearchContainer{
     display: none !important;
+}
+.form-help, .form-search{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   }
   .add-help > h1 {
     font-size: 40px;
@@ -67,13 +74,14 @@
   }
   .add-help, .search {
     height: 100%;
-    width: 40%;
+    width: 80%;
     border: .5px solid black;
     border-radius: 20px;
     background-color: #D98324;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0px 0px 15px #212121;
   }
   .search-img {
     height: 5rem;
@@ -94,17 +102,33 @@
     align-items: center;
     flex-flow: wrap;
   }
+  .form-help-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .help-container {
     width: 90%;
     height:15rem;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    background-color: white;
-    box-shadow: 5px 5px 15px black;
+    justify-content: space-around;
+    flex-direction: column;
+    /*align-items: flex-start;*/
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 0px 15px black;
     flex-wrap: wrap;
     margin: .5rem;
     margin-top: 3rem;
+    padding: 1rem;
+    border-radius: 10px;
+    color: white;
+    border-color: transparent;
+  }
+  .username-time{
+    width: 80vw;
+    display: flex;
+    justify-content: space-between;
   }
   .solutions-answerbtn {
     width: 100%;
