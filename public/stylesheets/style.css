@@ -6,6 +6,9 @@
     background-image: url('/images/Blue-Background-For-iPhone-5s-.jpg');
     background-size: cover;
   }
+  .desktopInfo{
+    display: none !important;
+  }
   footer {
     position: fixed;
     width: 100vw;
@@ -243,6 +246,9 @@
     opacity: 1;
   }
   @media only screen and (min-device-width: 737px){
+.desktopInfo{
+  display: flex !important;
+}
 #login-container{
   display: flex;
   justify-content: center;
