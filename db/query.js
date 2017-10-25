@@ -16,15 +16,35 @@ function checkLogin(user) {
   return db('users').first().where({'username': user.username, 'password': user.password});
 }
 
-function getInfo(user) {
-  // return db.select('group_name').from('groups').innerJoin('users', user.group_id, 'groups.id');
-    return db('groups').innerJoin('users', user.group_id, 'groups.id').returning('groups.group_name');
+function getGroupName(group_id) {
+    return db('groups').first().where('id', group_id);
 }
+
+function getHelps(group_id){
+  return db('helps').where('group_id', group_id);
+}
+
+function getHelpUser(user){
+  return db('users').first().where('id', user);
+}
+
+function getAnswers(help_id){
+  return db('answers').where('help_id', help_id);
+}
+
+function getCategory(cat_id){
+  return db('categories').where('id', cat_id);
+}
+
 
 module.exports = {
   checkUser,
   createUser,
   checkGroup,
   checkLogin,
-  getInfo
+  getGroupName,
+  getHelps,
+  getHelpUser,
+  getAnswers,
+  getCategory
 };
