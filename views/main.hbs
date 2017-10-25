@@ -19,120 +19,49 @@
       </div>
 
       <div id="add-search-container">
-        <button class="add-help">
-          <h1>Add Help +</h1>
-        </button>
-        <button class="search">
-          <img class="search-img" src="/images/search-128.png" alt="">
-        </button>
+        <form class="form-help" action="/help" method="get">
+          <button action="/help" method="get" class="add-help">
+            <h1>Add Help +</h1>
+          </button>
+        </form>
+
+        <form class="form-search" action="index.html" method="post">
+          <button class="search">
+            <img class="search-img" src="/images/search-128.png" alt="">
+          </button>
+        </form>
+
       </div>
     </header>
 
     <section>
       <div class="container">
+        {{#each helps}}
+        <form class="form-help-container" action="/qa" method="get">
 
-        <form class="" action="/qa:id" method="get">
           <button class="help-container">
 
-            <div class="username">
-              <h3>{{username}}</h3>
+            <div class="username-time">
+              <div class="username">
+                <h3>{{helpUser}}</h3>
+              </div>
+
+              <!-- <div class="timestamp">
+                <h3></h3>
+              </div> -->
             </div>
 
+
             <div class="question-head">
-              <h3>Q:{{question}}</h3>
+              <h3>Q:{{qTitle}}</h3>
             </div>
 
             <div class="solutions-answerbtn">
-              <h5>Solutions: {{solutions}}</h5>
+              <h5>Solutions: {{solution}}</h5>
             </div>
           </button>
         </form>
-
-
-        <a class="help-container">
-          <div class="username">
-            <h3>{{username}}</h3>
-          </div>
-
-          <div class="question-head">
-            <h3>Q:{{question}}</h3>
-          </div>
-
-          <div class="solutions-answerbtn">
-            <h5>Solutions: {{solutions}}</h5>
-          </div>
-        </a>
-
-        <a class="help-container">
-          <div class="username">
-            <h3>{{username}}</h3>
-          </div>
-
-          <div class="question-head">
-            <h3>Q:{{question}}</h3>
-          </div>
-
-          <div class="solutions-answerbtn">
-            <h5>Solutions: {{solutions}}</h5>
-          </div>
-        </a>
-
-        <a class="help-container">
-          <div class="username">
-            <h3>{{username}}</h3>
-          </div>
-
-          <div class="question-head">
-            <h3>Q:{{question}}</h3>
-          </div>
-
-          <div class="solutions-answerbtn">
-            <h5>Solutions: {{solutions}}</h5>
-          </div>
-        </a>
-
-        <a class="help-container">
-          <div class="username">
-            <h3>{{username}}</h3>
-          </div>
-
-          <div class="question-head">
-            <h3>Q:{{question}}</h3>
-          </div>
-
-          <div class="solutions-answerbtn">
-            <h5>Solutions: {{solutions}}</h5>
-          </div>
-        </a>
-
-        <a class="help-container">
-          <div class="username">
-            <h3>{{username}}</h3>
-          </div>
-
-          <div class="question-head">
-            <h3>Q:{{question}}</h3>
-          </div>
-
-          <div class="solutions-answerbtn">
-            <h5>Solutions: {{solutions}}</h5>
-          </div>
-        </a>
-
-        <a class="help-container">
-          <div class="username">
-            <h3>{{username}}</h3>
-          </div>
-
-          <div class="question-head">
-            <h3>Q:{{question}}</h3>
-          </div>
-
-          <div class="solutions-answerbtn">
-            <h5>Solutions: {{solutions}}</h5>
-          </div>
-        </a>
-
+        {{/each}}
       </div>
     </section>
 
