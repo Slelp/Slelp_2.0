@@ -1,146 +1,247 @@
-
-  html,body{
-    height: 100%;
-  }
-  body{
-    height: 100vh;
-    background-image: url('../images/Blue-Background-For-iPhone-5s-.jpg');
-    background-size: cover;
-    margin: 0;
-    overflow: hidden;
-  }
-  header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 20rem;
-    display: flex;
-    flex-flow: wrap;
-    overflow: hidden;
-  }
-  .user-info {
-    width: 100vw;
-    height: 45%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    border-bottom: 5px solid white;
-    margin-bottom: 1rem;
-  }
-  #logo{
-    width: 33%;
-    height: 8rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #DD7016;
-    font-family: 'Pacifico', cursive;
-    font-size: 40px;
-    text-shadow: 2px 2px 8px white;
-  }
-  .group, .user {
-    width: 33%;
-    height: 8rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #212121;
-    font-family: 'Rokkitt', serif;
-    font-size: 30px;
-    color: white;
-  }
-  #user-time-question {
-    height: 45%;
-    width: 100vw;
-    align-self: flex-end;
-    display: flex;
-    justify-content: space-around;
-    padding-bottom: 2rem;
-    border: 2px solid black;
-    display: flex;
-    flex-direction: column;
-
-  }
-  .user-time{
-    width: 100%;
-    height: 50%;
-    border: 2px solid red;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-start;
-  }
-  .question{
-    width: 100%;
-    height: 60%;
-    border: 2px solid blue;
-  }
-  .username{
-    width: 50%;
-
-  }
-  section{
-    position: relative;
-    top: 20rem;
-    bottom: 5rem;
-    height: 77%;
-    width: 100%;
-    margin: 0;
-    overflow-y: scroll;
-  }
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: wrap;
-  }
-  a{
-    font-size: 32px;
-    /*border: 1px solid black;*/
-    border-radius: 15px;
-    background-color: orange;
-    text-align: center;
-  }
-  h3 {
-    font-size: 40px;
-    margin: 0;
-    margin-left: .5rem;
-    font-family: 'Rokkitt';
-  }
-  h5 {
-    font-size: 35px;
-    margin: 0;
-    margin-left: .5rem;
-    font-family: 'Rokkitt';
-  }
-  footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    height: 5rem;
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    flex-flow: wrap;
-    border: 1px solid black;
-    background-color: #333;
-    opacity: .8;
-    border-top: 4px solid white;
-  }
-  .foot {
-    padding-right: 2rem;
-    padding-bottom: 1rem;
-  }
-  .foot > a {
-    text-decoration: none;
-    color: white;
-    opacity: .5;
-    font-size: 30px;
-    font-family: 'Rokkitt', serif;
-    letter-spacing: 2px;
-  }
+html,body{
+  height: 100%;
+}
+body{
+  height: 100vh;
+  background-image: url('/images/Blue-Background-For-iPhone-5s-.jpg');
+  background-size: cover;
+  margin: 0;
+  overflow: hidden;
+  color: white;
+  text-shadow: 2px 2px 8px #020A49;
+  font-family: 'Ro'
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 20rem;
+  display: flex;
+  flex-flow: wrap;
+  overflow: hidden;
+}
+.group-info {
+  width: 100vw;
+  height: 45%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 5px solid white;
+  margin-bottom: 1rem;
+}
+#logo{
+  width: 33%;
+  height: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #DD7016;
+  font-family: 'Pacifico', cursive;
+  font-size: 40px;
+  text-shadow: 2px 2px white;
+}
+.group{
+  width: 33%;
+  height: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #212121;
+  font-family: 'Rokkitt', serif;
+  font-size: 30px;
+  color: white;
+}
+#user-time-question {
+  height: 45%;
+  width: 100vw;
+  align-self: flex-end;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 2rem;
+  /*border: 2px solid black;*/
+  display: flex;
+  flex-direction: column;
+}
+.user-time{
+  width: 100%;
+  height: 40%;
+  /*border: 2px solid red;*/
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
+.username{
+  width: 50%;
+  /*border: 2px solid white;*/
+  padding-left: 2rem;
+}
+.time{
+  width: 50%;
+  /*border: 2px solid white;*/
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 2rem;
+}
+.question{
+  width: 100%;
+  height: 60%;
+  /*border: 2px solid blue;*/
+  padding-left: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.question > h3{
+  font-size: 60px;
+  color: #DD7016;
+  font-weight: bold;
+  text-shadow: 2px 2px 8px black;
+  font-family: 'Pacifico', cursive;
+}
+section{
+  position: relative;
+  top: 19.5rem;
+  bottom: 5rem;
+  height: 77%;
+  width: 100%;
+  margin: 0;
+  overflow-y: scroll;
+}
+.container{
+  height: 100%;
+}
+.question-description{
+  height: 40%;
+  margin: 2rem;
+  border-radius: 4px;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-flow: wrap;
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 0px 25px black;
+  color: white;
+}
+.help-description, .answer-description{
+  height: 90%;
+  width: 100%;
+  /*border: 1px solid white;*/
+  margin-bottom: 1rem;
+}
+.description-links{
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 50%;
+}
+.link{
+  background-color: #FFA159;
+  border-radius: 4px;
+  border: .5px solid #020A49;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  text-decoration: none;
+  color: #0676A3;
+}
+.link:hover{
+  background-color: #D98324;
+}
+.link > h3{
+  text-shadow: 0px 0px;
+}
+.solution-description{
+  height: 80%;
+  width: 100%;
+  /*margin: 2rem;*/
+  border-radius: 4px;
+  background-color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  box-shadow: 0px 0px 15px black;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-flow: wrap;
+}
+.solutions-header{
+  padding-left: 2rem;
+}
+.solutions-header > h3{
+  font-size: 60px;
+  color: #DD7016;
+  font-weight: bold;
+  text-shadow: 2px 2px 8px black;
+  font-family: 'Pacifico', cursive;
+}
+.solutions{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.solution{
+  height: 100%;
+  margin: 2rem;
+  /*border: 2px solid white;*/
+  display: flex;
+  flex-direction: column;
+  flex-flow: wrap;
+}
+.answer-links{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50%;
+}
+a{
+  font-size: 32px;
+  border-radius: 15px;
+  background-color: orange;
+  text-align: center;
+}
+h3, h4 {
+  font-size: 40px;
+  margin: 0;
+  margin-left: .5rem;
+  font-family: 'Rokkitt';
+}
+h5{
+  font-size: 30px;
+  margin: 0;
+  padding-top: .5rem;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 5rem;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-flow: wrap;
+  border: 1px solid black;
+  background-color: #333;
+  opacity: .8;
+  border-top: 4px solid white;
+}
+.foot {
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+}
+.foot > a {
+  text-decoration: none;
+  color: white;
+  opacity: .5;
+  font-size: 30px;
+  font-family: 'Rokkitt', serif;
+  letter-spacing: 2px;
+}
 
 @media only screen and (min-device-width: 737px) {
 
