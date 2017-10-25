@@ -242,3 +242,50 @@
     padding: 2px;
     opacity: 1;
   }
+  @media only screen and (min-device-width: 737px){
+#login-container{
+  display: flex;
+  justify-content: center;
+}
+#logo{
+  font-size: 40px;
+}
+#container{
+  margin: 0;
+}
+.login-create-box{
+  width: 40vw;
+}
+.create-form{
+  display: flex;
+  justify-content: center;
+}
+.login-form{
+  display: flex;
+  justify-content: center;
+}
+.title{
+  height: 10vh;
+  width: 50vw;
+}
+.title h2{
+  font-size: 40px;
+}
+input{
+  height: 5vh;
+}
+.mobileInfo{
+  display: none;
+}
+.arrow{
+  text-align: center;
+  align-content: center;
+  height: 12rem;
+  width: 12rem;
+  padding-bottom: 37px;
+}
+#info{
+  height: 12rem;
+  width: 12rem;
+}
+  }

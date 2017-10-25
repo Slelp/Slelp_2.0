@@ -1,4 +1,5 @@
 
+
   html,body{
     height: 100%;
   }
@@ -57,11 +58,15 @@
     justify-content: space-around;
     padding-bottom: 2rem;
   }
-  .form-help, .form-search{
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+  .DesktopSearchContainer{
+    display: none !important;
+}
+.form-help, .form-search{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   }
   .add-help > h1 {
     font-size: 40px;
@@ -194,7 +199,55 @@
     font-family: 'Rokkitt', serif;
     letter-spacing: 2px;
   }
-
 @media only screen and (min-device-width: 737px) {
-
+#add-search-container{
+  height: 65%;
+  padding: 0;
+}
+.search{
+  width: 30%;
+  height: 5rem;
+}
+.add-help{
+  width: 30%;
+  height: 5rem;
+}
+.add-help > h1{
+  font-size: 35px;
+  border: 0;
+  margin: 0;
+}
+.user-info{
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section{
+  top: 10rem;
+}
+header{
+  height: 10rem;
+}
+footer{
+  background-color: rgba(0, 0, 0, 0.0);
+  border: 0;
+}
+footer h3{
+  text-shadow: 0px 0px 10px black;
+}
+.search-img{
+  height: 3rem;
+  width: 3rem;
+}
+.help-container{
+  height: 8rem;
+  width: 70vw;
+}
+.mobileSearchContainer{
+  display: none;
+}
+.DesktopSearchContainer{
+  display: flex !important;
+}
 }

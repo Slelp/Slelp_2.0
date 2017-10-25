@@ -6,21 +6,18 @@ body{
   background-image: url('/images/Blue-Background-For-iPhone-5s-.jpg');
   background-size: cover;
   margin: 0;
-  /*overflow: hidden;*/
 }
 header {
   display: flex;
   flex-flow: wrap;
-  width: 100vw;
 }
 .user-info {
-  width: 100vw;
+    width: 100vw;
     height: 45%;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     border-bottom: 5px solid white;
-    margin-bottom: 1rem;
 }
 #logo{
   width: 33%;
@@ -46,6 +43,27 @@ header {
   margin-top: .5rem;
 }
 
+.questionTitle{
+  width: 100vw;
+  color: white;
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Rokkitt', serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.questionTitle > h2{
+  margin: 0;
+}
+.questionTitle :first-child{
+  color: #DD7016;
+  font-size: 130px;
+  font-weight: bold;
+  text-shadow: 2px 2px 8px white;
+  font-family: 'Pacifico', cursive;
+}
 h3 {
   font-size: 40px;
   margin: 0;
@@ -85,7 +103,7 @@ footer {
   flex-direction: column;
   align-items: center;
   background: none;
-  margin: 15px;
+  font-size: 50px;
 }
 .problemTitle{
   height: 5vh;
@@ -103,9 +121,10 @@ footer {
 .problemItems::placeholder{
   color: white;
   padding-left: 5px;
+  font-size: 2rem;
 }
 .problemDescription{
-  height: 40vh;
+  height: 30vh;
   margin: 5px;
   display: flex;
   flex-wrap: wrap;
@@ -123,7 +142,7 @@ footer {
   border: none;
   box-shadow: 0px 0px 2px black;
   color: #0676A3;
-  font-size: 3em;
+  font-size: 80px;
   font-family:'Rokkitt', serif;
   font-weight: bold;
   text-shadow: 2px 2px 8px white;
@@ -147,6 +166,10 @@ header{
     width: 100vw;
     display: flex;
     align-self: center;
+    justify-content: center;
+}
+header h1 {
+  margin: 0;
 }
 .s-logo{
     font-size: 110px;
@@ -170,8 +193,10 @@ header{
 }
 
 .problemSubmit{
-    width: 35vw;
-    font-size: 40px;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    width: 30vw;
+    font-size: 2.5rem;
 }
 footer {
   position: fixed;
@@ -188,5 +213,13 @@ footer {
   background-color: transparent;
   opacity: .8;
   border-top: 4px solid transparent;
+}
+.questionTitle{
+  width: 50vw;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.questionTitle :first-child{
+  font-size: 80px;
 }
 }
