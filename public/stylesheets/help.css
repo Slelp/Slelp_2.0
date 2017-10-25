@@ -1,0 +1,150 @@
+html{
+    background-image: url('../images/Blue-Background-For-iPhone-5s-.jpg');
+}
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+}
+header{
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    align-items: center;
+    margin-bottom: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 20rem;
+    display: flex;
+    flex-flow: wrap;
+    overflow: hidden;
+}
+.logo :last-child{
+    display: none;
+}
+.s-logo {
+    color: #DD7016;
+    font-family: 'Pacifico', cursive;
+    font-size: 60px;
+    text-shadow: 2px 2px 8px white;
+    font-weight: bold;
+    margin: 0;
+}
+.header-title {
+    font-family:'Rokkitt', serif;
+    font-size: 30px;
+}
+.questionForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    margin: 15px;
+}
+.problemItems{
+    background-color: rgba(0, 0, 0, .4);
+    border: none;
+    color: white;
+    box-shadow: 0px 0px 10px white;
+    font-size: 15px;
+    margin: 15px;
+    width: 80vw;
+}
+.problemItems::placeholder{
+    color: white;
+    padding-left: 5px;
+}
+.problemDescription{
+    height: 40vh;
+    margin: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.problemLink{
+    height: 6vh;
+    margin: 5px;
+
+}
+.problemTitle{
+    height: 5vh;
+    margin: 5px;
+
+}
+.problemSubmit{
+    height: 8vh;
+    width: 80vw;
+    margin: 5px;
+    border-radius: 8px;
+    background-color: #FFA159;
+    border: none;
+    box-shadow: 0px 0px 2px black;
+    color: #0676A3;
+    font-size: 1.5em;
+    font-family:'Rokkitt', serif;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px white;
+}
+.copy{
+    margin: 0;
+    color: white;
+    text-align: right;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1.17em;
+    font-family:'Rokkitt', serif;
+    letter-spacing: 2px;
+}
+footer{
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+}
+
+@media only screen and (min-device-width: 737px){
+body{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.logo :last-child{
+    display: flex;
+}
+.logo{
+    display: flex;
+    flex-direction: row;
+}
+header{
+    width: 50vw;
+    display: flex;
+    align-self: center;
+}
+.s-logo{
+    font-size: 110px;
+}
+.header-title{
+    font-size: 60px;
+}
+.problemItems{
+    font-size: 20px;
+}
+.problemTitle{
+    width: 50vw;
+}
+
+.problemDescription{
+    width: 50vw;
+}
+
+.problemLink{
+    width: 50vw;
+}
+
+.problemSubmit{
+    width: 50vw;
+    font-size: 40px;
+}
+}
