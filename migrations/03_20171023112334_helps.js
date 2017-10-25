@@ -10,6 +10,7 @@ exports.up = function(knex, Promise) {
       table.integer('category_id').references('categories.id').onDelete('CASCADE');
       table.integer('user_id').references('users.id').onDelete('CASCADE');
       table.string('timestamp');
+      table.string('readableTime');
     })
   ]);
 };

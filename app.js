@@ -6,6 +6,27 @@ const db = require('./db/query');
 const port = process.env.PORT || 3000;
 const app = express();
 
+var theHelp = {
+  id: 0,
+  group_id: 0,
+  group_name: '',
+  qTitle: '',
+  description: '',
+  help_link: '',
+  category_id: 0,
+  category: '',
+  help_user: '',
+  help_readableTime: '',
+  theAnswer: []
+  // answer_id: 0,
+  // answer_user: '',
+  // answer: '',
+  // answer_link_1: '',
+  // answer_link_2: '',
+  // answer_timestamp: '',
+  // answer_readableTime: '',
+};
+
 var mainData = {
   group_id: 0,
   group_name: '',
@@ -25,7 +46,7 @@ app.set('view engine', 'hbs');
 app.use('/', pages);
 
 
-app.post('/create', (req, res) => {
+app.post('/', (req, res) => {
   if (req.body.username === '') {
     res.render('index', {
       createError: 'That username is invalid'
@@ -96,6 +117,59 @@ app.post('/main', (req, res) => {
       }
     });
 });
+
+app.post('/qa/:id', (req, res) => {
+  db.getHelpInfo(req.params.id)
+    .then(help => {
+
+      theHelp.id = help[0].id;
+      theHelp.group_id = help[0].group_id;
+      theHelp.qTitle = help[0].title;
+      theHelp.description = help[0].description;
+      theHelp.help_link = help[0].link;
+      theHelp.category_id = help[0].category_id;
+      theHelp.help_user = help[0].user_id;
+      theHelp.help_readableTime = help[0].readableTime;
+
+      db.getGroupName(help[0].group_id)
+        .then(group => {
+
+          theHelp.group_name = group.group_name;
+          db.getCategory(theHelp.category_id)
+            .then(category => {
+              theHelp.category = category[0].category_name;
+              db.getAnswers(theHelp.id)
+                .then(answer => {
+                  for (var i = 0; i < answer.length; i++) {
+                    getHelpAnswerUser(answer[i]);
+                  }
+
+                    res.render('qa', theHelp);
+                    });
+                });
+            });
+        });
+});
+
+function getHelpAnswerUser(answer) {
+  var answerData = {
+    answer_id: answer.id,
+    answer: answer.answer,
+    answer_link_1: answer.link_1,
+    answer_link_2: answer.link_2,
+    answer_timestamp: answer.timestamp,
+    answer_readableTime: answer.readableTime,
+    answer_user: answer.user_id
+  }
+  db.getAnswerUser(answerData.answer_user)
+    .then(user => {
+      answerData.answer_user = user[0].username;
+      theHelp.theAnswer.push(answerData);
+      console.log(theHelp);
+      return;
+    });
+}
+
 
 function cleanHelps(oneHelp) {
   var help = {
