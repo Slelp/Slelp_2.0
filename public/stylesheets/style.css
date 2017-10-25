@@ -44,16 +44,24 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
   }
   #info:hover {
     box-shadow: 2px 2px 5px white;
   }
   .arrow{
-    width: 3rem;
-    height: 3rem;
-    border-right: 5px solid white;
-    border-bottom: 5px solid white;
-    margin: 2rem;
+    width: 5rem;
+    height: 4rem;
+    /*padding: .2rem;*/
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+    padding-bottom: 1rem;
+    font-size: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin: .5rem;
   }
   #login-container {
     display: flex;
@@ -109,6 +117,7 @@
     justify-content: center;
     align-items: center;
     flex-flow: wrap;
+    transition: 0.3s;
   }
   input {
     width: 100%;
