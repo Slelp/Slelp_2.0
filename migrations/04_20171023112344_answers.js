@@ -9,6 +9,7 @@ exports.up = function(knex, Promise) {
       table.string('link_2');
       table.integer('user_id').references('users.id').onDelete('CASCADE');
       table.string('timestamp');
+      table.string('readableTime');
     })
   ]);
 };

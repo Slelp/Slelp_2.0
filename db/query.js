@@ -36,6 +36,14 @@ function getCategory(cat_id){
   return db('categories').where('id', cat_id);
 }
 
+function getHelpInfo(help_id) {
+  return db('helps').where('id', help_id);
+}
+
+function getAnswerUser(id) {
+  return db('users').where('id', id);
+}
+
 
 module.exports = {
   checkUser,
@@ -46,5 +54,7 @@ module.exports = {
   getHelps,
   getHelpUser,
   getAnswers,
-  getCategory
+  getCategory,
+  getHelpInfo,
+  getAnswerUser
 };
