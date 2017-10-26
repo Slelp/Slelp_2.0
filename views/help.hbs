@@ -10,7 +10,7 @@
     <header>
       <div class="user-info">
         <form class="form-logo" action="/main" method="get">
-          <button action="/main" method="get" type="button">
+          <button>
             <div id="logo">
               <h1>Slelp</h1>
             </div>
@@ -34,8 +34,19 @@
       </div>
 
       <form class="questionForm" action="/createHelp" method="post">
+        <div class="title-categories">
+          <input id="problemTitle"class="problemItems" type="string" name="title" placeholder="Give your help a title...">
 
-        <input class="problemTitle problemItems" type="string" name="title" placeholder="Give your help a title...">
+          <select id="category" class="problemItems" name="category">
+            <option value="misc">Select a Category</option>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="javascript">JavaScript</option>
+            <option value="express">Express</option>
+          </select>
+        </div>
+
+
         <textarea  rows="10" class="problemDescription problemItems" type="text" name="body" placeholder="Describe your problem in detail"></textarea>
         <input class="problemLink problemItems"type="string" name="link" placeholder="Attach a link if needed">
         <button class="problemSubmit" type="submit">Post Your Help Request!</button>

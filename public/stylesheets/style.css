@@ -53,6 +53,22 @@
   #info:hover {
     box-shadow: 2px 2px 5px white;
   }
+  .description > ul {
+    list-style: none;
+    font-size: 55px;
+    padding: 0;
+  }
+  .description h5, h3{
+    font-size: 70px;
+    margin: 0;
+  }
+  .description h4{
+    margin: 1rem;
+    color: #D98324;
+  }
+  .description h6{
+    margin: .5rem;
+  }
   .arrow{
     width: 5rem;
     height: 4rem;
