@@ -9,9 +9,13 @@
   <body>
     <header>
       <div class="user-info">
-        <div id="logo">
-          <h1>Slelp</h1>
-        </div>
+        <form class="form-logo" action="/main" method="get">
+          <button action="/main" method="get" type="button">
+            <div id="logo">
+              <h1>Slelp</h1>
+            </div>
+          </button>
+        </form>
         <div class="group">
           <h1>Create A Help</h1>
         </div>
@@ -19,7 +23,18 @@
     </header>
 
     <section>
+
+      <div class="user-time">
+        <div class="username">
+          <h3>'username'</h3>
+        </div>
+        <div class="time">
+          <h3>'time stamp'</h3>
+        </div>
+      </div>
+
       <form class="questionForm" action="/createHelp" method="post">
+
         <input class="problemTitle problemItems" type="string" name="title" placeholder="Give your help a title...">
         <textarea  rows="10" class="problemDescription problemItems" type="text" name="body" placeholder="Describe your problem in detail"></textarea>
         <input class="problemLink problemItems"type="string" name="link" placeholder="Attach a link if needed">

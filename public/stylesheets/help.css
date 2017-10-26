@@ -22,6 +22,28 @@ header {
     border-bottom: 5px solid white;
     margin-bottom: 1rem;
 }
+.user-time{
+  width: 100%;
+  height: 40%;
+  /*border: 2px solid red;*/
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  color: white;
+}
+.username{
+  width: 50%;
+  /*border: 2px solid white;*/
+  padding-left: 2rem;
+}
+.time{
+  width: 50%;
+  /*border: 2px solid white;*/
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 2rem;
+}
 #logo{
   width: 33%;
   height: 8rem;
@@ -31,7 +53,11 @@ header {
   color: #DD7016;
   font-family: 'Pacifico', cursive;
   font-size: 40px;
-  text-shadow: 2px 2px 8px white;
+  text-shadow: 2px 2px white;
+}
+.form-logo{
+  margin-left: 6rem;
+  margin-bottom: .5rem;
 }
 .group{
   width: 50%;
@@ -44,6 +70,7 @@ header {
   font-size: 30px;
   color: white;
   margin-top: .5rem;
+  text-shadow: 2px 2px 8px #212121;
 }
 
 h3 {
@@ -86,19 +113,23 @@ footer {
   align-items: center;
   background: none;
   margin: 15px;
+  margin-top: 5rem;
 }
 .problemTitle{
   height: 5vh;
   margin: 5px;
+  margin-bottom: 2rem;
 }
 .problemItems{
-  background-color: rgba(0, 0, 0, .4);
+  background-color: rgba(0, 0, 0, .7);
   border: none;
   color: white;
-  box-shadow: 0px 0px 10px white;
+  box-shadow: 0px 0px 25px black;
   font-size: 32px;
   margin: 15px;
   width: 85vw;
+  margin-bottom: 2rem;
+  padding: .7rem;
 }
 .problemItems::placeholder{
   color: white;
@@ -106,13 +137,13 @@ footer {
 }
 .problemDescription{
   height: 40vh;
-  margin: 5px;
   display: flex;
   flex-wrap: wrap;
 }
 .problemLink{
   height: 6vh;
   margin: 5px;
+  margin-bottom: 2rem;
 }
 .problemSubmit{
   height: 8vh;
@@ -123,10 +154,10 @@ footer {
   border: none;
   box-shadow: 0px 0px 2px black;
   color: #0676A3;
-  font-size: 3em;
+  font-size: 65px;
   font-family:'Rokkitt', serif;
   font-weight: bold;
-  text-shadow: 2px 2px 8px white;
+  margin-bottom: 2rem;
 }
 
 @media only screen and (min-device-width: 737px){

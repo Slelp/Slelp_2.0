@@ -2,23 +2,37 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/stylesheets/createAnswer.css">
+    <link rel="stylesheet" href="/stylesheets/answer.css">
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans|Pacifico|Rokkitt" rel="stylesheet">
     <title>Answer a Slelp</title>
   </head>
   <body>
     <header>
-      <div class="user-info">
-        <div id="logo">
-          <h1>Slelp</h1>
-        </div>
+      <div class="group-info">
+        <form class="form-logo" action="/main" method="get">
+          <button type="button">
+            <div id="logo">
+              <h1>Slelp</h1>
+            </div>
+          </button>
+        </form>
         <div class="group">
           <h1>Add an answer</h1>
         </div>
       </div>
-      <div class="questionTitle">
-        <h2>Q:</h2>
-        <h2>{{title}}I need help with javascript</h2>
+
+      <div id="user-time-question">
+        <div class="user-time">
+          <div class="username">
+            <h3>'username'</h3>
+          </div>
+          <div class="time">
+            <h3>'time stamp'</h3>
+          </div>
+        </div>
+        <div class="question">
+          <h3>Q:</h3><h3 id="qTitle">I need help with javascript</h3>
+        </div>
       </div>
     </header>
 
