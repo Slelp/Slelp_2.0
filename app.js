@@ -196,6 +196,9 @@ app.post('/qa/:id', (req, res) => {
       theHelp.category_id = help[0].category_id;
       theHelp.help_user = help[0].user_id;
       theHelp.help_readableTime = help[0].readableTime;
+      theHelp.help_readableTime = theHelp.help_readableTime.toString().split('T');
+      theHelp.help_readableTime = theHelp.help_readableTime[0];
+      console.log(req.body.category);
       db.getUser(theHelp.help_user)
         .then(user => {
           theHelp.help_user = user.username;
@@ -256,11 +259,13 @@ app.post('/createHelp', (req, res) => {
     title: req.body.title,
     description: req.body.body,
     link: req.body.link,
-    user_id: mainData.user_id,
+    user_id: req.body.user_id,
     category_id: req.body.category,
     timestamp: new Date().getTime(),
     readableTime: new Date(),
   };
+  newHelp.readableTime = newHelp.readableTime.toString().split('T');
+  newHelp.readableTime = newHelp.readableTime[0];
   console.log(req.body.category);
   db.getCategoryId(newHelp.category_id)
     .then(cat_id => {
@@ -288,9 +293,10 @@ app.post('/createAnswer', (req,res)=> {
 app.get('/answer', (req, res) => {
   res.render('answer', theHelp);
 })
-// app.get('/help', (req, res) => {
-//   res.render('help', mainData);
-// });
+
+app.get('/help', (req, res) => {
+  res.render('help', mainData);
+});
 
 app.listen(port, () => console.log(`Slelp listening on port:
   ${port}`));

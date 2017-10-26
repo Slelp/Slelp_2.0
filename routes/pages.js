@@ -12,9 +12,9 @@ router.get('/main', (req, res) => {
   res.render('main');
 });
 
-router.get('/help', (req, res) => {
-  res.render('help');
-});
+// router.get('/help', (req, res) => {
+//   res.render('help');
+// });
 
 // router.get('/answer', (req, res) => {
 //   res.render('answer');

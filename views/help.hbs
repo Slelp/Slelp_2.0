@@ -28,10 +28,7 @@
 
       <div class="user-time">
         <div class="username">
-          <h3>'username'</h3>
-        </div>
-        <div class="time">
-          <h3>'time stamp'</h3>
+          <h3>{{username}}</h3>
         </div>
       </div>
 
@@ -52,6 +49,7 @@
 
         <textarea  rows="10" class="problemDescription problemItems" type="text" name="body" placeholder="Describe your problem in detail"></textarea>
         <input class="problemLink problemItems"type="string" name="link" placeholder="Attach a link if needed">
+        <input style="display:none;" name="user_id" value="{{user_id}}">
         <button class="problemSubmit" type="submit">Post Your Help Request!</button>
       </form>
     </section>
