@@ -208,6 +208,9 @@ app.post('/qa/:id', (req, res) => {
                   theHelp.category = category[0].category_name;
                   db.getAnswers(theHelp.id)
                     .then(answer => {
+                      while(theHelp.theAnswer.length > answer.length){
+                        theHelp.theAnswer.pop();
+                      }
                       for (var i = 0; i < answer.length; i++) {
                         getHelpAnswerUser(answer[i]);
                       }
