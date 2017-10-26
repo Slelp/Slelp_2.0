@@ -37,7 +37,7 @@
     </header>
 
     <section>
-      <form class="questionForm">
+      <form class="questionForm" action="/qa:id" method="post">
         <input class="problemTitle problemItems" type="string" name="title" placeholder="Give your answer a title...">
 
         <textarea  rows="10" class="problemDescription problemItems" type="text" name="body" placeholder="Add answer description here..."></textarea>
@@ -46,7 +46,7 @@
 
         <input class="problemLink problemItems"type="string" name="link" placeholder="Attach a second link if needed">
 
-        <button class="problemSubmit" type="button">Submit Your Answer!</button>
+        <button class="problemSubmit" type="submit">Submit Your Answer!</button>
       </form>
     </section>
 
