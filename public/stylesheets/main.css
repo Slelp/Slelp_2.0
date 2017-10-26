@@ -37,7 +37,11 @@ header {
   color: #DD7016;
   font-family: 'Pacifico', cursive;
   font-size: 40px;
-  text-shadow: 2px 2px 8px white;
+  text-shadow: 2px 2px white;
+}
+.form-logo{
+  margin-left: 6rem;
+  margin-bottom: .5rem;
 }
 .group, .user {
   width: 33%;
