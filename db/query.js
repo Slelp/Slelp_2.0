@@ -44,6 +44,9 @@ function getAnswerUser(id) {
   return db('users').where('id', id);
 }
 
+function createHelp(newHelp) {
+  return db('helps').insert(newHelp).returning('*');
+}
 
 module.exports = {
   checkUser,
@@ -56,5 +59,6 @@ module.exports = {
   getAnswers,
   getCategory,
   getHelpInfo,
-  getAnswerUser
+  getAnswerUser,
+  createHelp
 };

@@ -199,6 +199,47 @@ function cleanHelps(oneHelp) {
         });
     });
 }
+var http = require('http');
+app.post('/createHelp', (req, res, next) => {
+  //Posting to slack
+  var proxyRequest = http.request({
+       host: 'https://hooks.slack.com',
+       port: 80,
+       method: 'POST',
+       path: '/services/T1T555TL0/B7NM8J2HJ/KpV4lGwjMn7wEjHFdOJhE1aO'
+     });
+    //  function (proxyResponse) {
+    //    proxyResponse.on('data', function () {
+    //      res.send(req.body.title);
+    //    });
+
+
+   proxyRequest.write(req.body.title);
+   proxyRequest.end();
+   //adding to database
+   next()
+ });
+ app.post('/createHelp', (req, res) => {
+  var newHelp = {
+    group_id: mainData.group_id,
+    title: req.body.title,
+    description: req.body.body,
+    link: req.body.link,
+    user_id: mainData.user_id,
+    timestamp: new Date().getTime(),
+    readableTime: new Date(),
+  };
+app.post
+
+  db.createHelp(newHelp)
+  .then(help => {
+    res.render('main')
+    console.log(help);
+  })
+  .catch(err => {console.log(err);})
+});
+
+
 
 app.listen(port, () => console.log(`Slelp listening on port:
   ${port}`));

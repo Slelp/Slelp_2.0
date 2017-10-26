@@ -23,6 +23,7 @@
     </header>
 
     <section>
+
       <div class="user-time">
         <div class="username">
           <h3>'username'</h3>
@@ -32,11 +33,12 @@
         </div>
       </div>
 
-      <form class="questionForm">
+      <form class="questionForm" action="/createHelp" method="post">
+
         <input class="problemTitle problemItems" type="string" name="title" placeholder="Give your help a title...">
         <textarea  rows="10" class="problemDescription problemItems" type="text" name="body" placeholder="Describe your problem in detail"></textarea>
         <input class="problemLink problemItems"type="string" name="link" placeholder="Attach a link if needed">
-        <button class="problemSubmit" type="button">Post Your Help Request!</button>
+        <button class="problemSubmit" type="submit">Post Your Help Request!</button>
       </form>
     </section>
 
