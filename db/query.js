@@ -8,6 +8,10 @@ function checkUser(user) {
   return db('users').first().where('username', user.username);
 }
 
+function getUser(id) {
+  return db('users').first().where('id', id);
+}
+
 function checkGroup(group) {
   return db('groups').first().where('group_code', group);
 }
@@ -60,5 +64,6 @@ module.exports = {
   getCategory,
   getHelpInfo,
   getAnswerUser,
-  createHelp
+  createHelp,
+  getUser
 };

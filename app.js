@@ -28,10 +28,10 @@ var theHelp = {
 };
 
 var mainData = {
-  group_id: 0,
-  group_name: '',
-  user_id: 0,
-  username: '',
+  // group_id: 0,
+  // group_name: '',
+  // user_id: 0,
+  // username: '',
   helps: []
 };
 
@@ -102,11 +102,15 @@ app.post('/main', (req, res) => {
         mainData.user_id = user.id;
         mainData.username = user.username;
         mainData.group_id = user.group_id;
+        mainData.password = user.password;
         db.getGroupName(user.group_id)
           .then(group => {
             mainData.group_name = group.group_name;
             db.getHelps(group.id)
               .then(helps => {
+                while (mainData.helps.length > helps.length) {
+                  mainData.helps.pop();
+                }
                 for (var i = 0; i < helps.length; i++) {
                   cleanHelps(helps[i]);
                 }
@@ -130,25 +134,28 @@ app.post('/qa/:id', (req, res) => {
       theHelp.category_id = help[0].category_id;
       theHelp.help_user = help[0].user_id;
       theHelp.help_readableTime = help[0].readableTime;
+      db.getUser(theHelp.help_user)
+        .then(user => {
+          theHelp.help_user = user.username;
+          db.getGroupName(help[0].group_id)
+            .then(group => {
 
-      db.getGroupName(help[0].group_id)
-        .then(group => {
+              theHelp.group_name = group.group_name;
+              db.getCategory(theHelp.category_id)
+                .then(category => {
+                  theHelp.category = category[0].category_name;
+                  db.getAnswers(theHelp.id)
+                    .then(answer => {
+                      for (var i = 0; i < answer.length; i++) {
+                        getHelpAnswerUser(answer[i]);
+                      }
 
-          theHelp.group_name = group.group_name;
-          db.getCategory(theHelp.category_id)
-            .then(category => {
-              theHelp.category = category[0].category_name;
-              db.getAnswers(theHelp.id)
-                .then(answer => {
-                  for (var i = 0; i < answer.length; i++) {
-                    getHelpAnswerUser(answer[i]);
-                  }
-
-                    res.render('qa', theHelp);
+                      res.render('qa', theHelp);
                     });
                 });
             });
         });
+    });
 });
 
 function getHelpAnswerUser(answer) {
@@ -203,23 +210,23 @@ var http = require('http');
 app.post('/createHelp', (req, res, next) => {
   //Posting to slack
   var proxyRequest = http.request({
-       host: 'https://hooks.slack.com',
-       port: 80,
-       method: 'POST',
-       path: '/services/T1T555TL0/B7NM8J2HJ/KpV4lGwjMn7wEjHFdOJhE1aO'
-     });
-    //  function (proxyResponse) {
-    //    proxyResponse.on('data', function () {
-    //      res.send(req.body.title);
-    //    });
+    host: 'https://hooks.slack.com',
+    port: 80,
+    method: 'POST',
+    path: '/services/T1T555TL0/B7NM8J2HJ/KpV4lGwjMn7wEjHFdOJhE1aO'
+  });
+  //  function (proxyResponse) {
+  //    proxyResponse.on('data', function () {
+  //      res.send(req.body.title);
+  //    });
 
 
-   proxyRequest.write(req.body.title);
-   proxyRequest.end();
-   //adding to database
-   next()
- });
- app.post('/createHelp', (req, res) => {
+  proxyRequest.write(req.body.title);
+  proxyRequest.end();
+  //adding to database
+  next()
+});
+app.post('/createHelp', (req, res) => {
   var newHelp = {
     group_id: mainData.group_id,
     title: req.body.title,
@@ -229,14 +236,16 @@ app.post('/createHelp', (req, res, next) => {
     timestamp: new Date().getTime(),
     readableTime: new Date(),
   };
-app.post
+  app.post
 
   db.createHelp(newHelp)
-  .then(help => {
-    res.render('main')
-    console.log(help);
-  })
-  .catch(err => {console.log(err);})
+    .then(help => {
+      res.render('main')
+      console.log(help);
+    })
+    .catch(err => {
+      console.log(err);
+    })
 });
 
 
