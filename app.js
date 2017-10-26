@@ -107,6 +107,7 @@ function poopulateMain(group_id) {
 }
 
 app.post('/main', (req, res) => {
+  console.log(req);
   db.checkLogin(req.body)
     .then(user => {
       if (!user) {
@@ -164,23 +165,14 @@ function cleanHelps(oneHelp) {
               // console.log(cat);
               var flag = true;
               help.category = cat[0].category_name;
-              console.log(mainData.helps);
               for (var i = 0; i < mainData.helps.length; i++) {
-                console.log(`168 : ${mainData.helps[i].qTitle}`);
-                console.log(`169 : ${help.qTitle}`);
                 if (mainData.helps[i].qTitle === help.qTitle) {
                   flag = false;
-                  console.log(`167 : ${flag}`);
                 }
               }
               if (flag) {
-                // console.log(`173 : ${mainData.helps}`);
                 mainData.helps.push(help);
                 }
-                // for (var i = 0; i < mainData.helps.length; i++) {
-                //   if (mainData.helps[i].)
-                //   mainData.helps[i]
-              // }
               return;
             })
             .catch(err => {
@@ -193,7 +185,9 @@ function cleanHelps(oneHelp) {
 app.post('/qa/:id', (req, res) => {
   db.getHelpInfo(req.params.id)
     .then(help => {
-
+      theHelp.username =  mainData.username;
+      theHelp.user_id =  mainData.user_id;
+      theHelp.password =  mainData.password;
       theHelp.id = help[0].id;
       theHelp.group_id = help[0].group_id;
       theHelp.qTitle = help[0].title;
@@ -239,32 +233,19 @@ function getHelpAnswerUser(answer) {
   db.getAnswerUser(answerData.answer_user)
     .then(user => {
       answerData.answer_user = user[0].username;
-      theHelp.theAnswer.push(answerData);
-      // console.log(theHelp);
+      var flag = true;
+      for (var i = 0; i < theHelp.theAnswer.length; i++) {
+        if(theHelp.theAnswer[i].answer === answerData.answer){
+          flag = false;
+        }
+      }
+      if (flag){
+        theHelp.theAnswer.push(answerData);
+      }
+
       return;
     });
 }
-
-var http = require('http');
-// app.post('/createHelp', (req, res, next) => {
-//   //Posting to slack
-//   var proxyRequest = http.request({
-//     host: 'https://hooks.slack.com',
-//     port: 80,
-//     method: 'POST',
-//     path: '/services/T1T555TL0/B7NM8J2HJ/KpV4lGwjMn7wEjHFdOJhE1aO'
-//   });
-//   //  function (proxyResponse) {
-//   //    proxyResponse.on('data', function () {
-//   //      res.send(req.body.title);
-//   //    });
-//
-//
-//   proxyRequest.write(req.body.title);
-//   proxyRequest.end();
-//   //adding to database
-//   next()
-// });
 
 app.post('/createHelp', (req, res) => {
   var newHelp = {
@@ -284,13 +265,8 @@ app.post('/createHelp', (req, res) => {
       newHelp.category_id = cat_id[0].id;
       db.createHelp(newHelp)
         .then(help => {
-          // db.getCategories(help.category_id)
-          // .then(categories{
-          //   mainData.categories = categories
-          // console.log(help);
           poopulateMain(mainData.group_id);
           res.render('main', mainData);
-          // res.render('main', mainData);
         })
 
     })
@@ -299,7 +275,19 @@ app.post('/createHelp', (req, res) => {
     });
 });
 
+app.post('/createAnswer', (req,res)=> {
+  db.createAnswer(req.body)
+  .then(answer => {
+    res.render('main', mainData);
+  })
+})
 
+app.get('/answer', (req, res) => {
+  res.render('answer', theHelp);
+})
+// app.get('/help', (req, res) => {
+//   res.render('help', mainData);
+// });
 
 app.listen(port, () => console.log(`Slelp listening on port:
   ${port}`));

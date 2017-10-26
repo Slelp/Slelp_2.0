@@ -9,8 +9,10 @@
   <body>
     <header>
       <div class="user-info">
-        <form class="form-logo" action="/main" method="get">
+        <form class="form-logo" action="/main" method="post">
           <button>
+            <input type="text" style="display: none;" name="username" value="{{username}}">
+            <input type="text" style="display: none;" name="password" value="{{password}}">
             <div id="logo">
               <h1>Slelp</h1>
             </div>

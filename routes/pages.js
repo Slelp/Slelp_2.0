@@ -16,9 +16,9 @@ router.get('/help', (req, res) => {
   res.render('help');
 });
 
-router.get('/answer', (req, res) => {
-  res.render('answer');
-});
+// router.get('/answer', (req, res) => {
+//   res.render('answer');
+// });
 
 router.get('/qa', (req, res) => {
   res.render('qa');

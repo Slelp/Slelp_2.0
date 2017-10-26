@@ -9,8 +9,10 @@
   <body>
     <header>
       <div class="group-info">
-        <form class="form-logo" action="/main" method="get">
+        <form class="form-logo" action="/main" method="post">
           <button>
+            <input type="text" style="display: none;" name="username" value="{{username}}">
+            <input type="text" style="display: none;" name="password" value="{{password}}">
             <div id="logo">
               <h1>Slelp</h1>
             </div>
@@ -24,27 +26,30 @@
       <div id="user-time-question">
         <div class="user-time">
           <div class="username">
-            <h3>'username'</h3>
+            <h3>{{help_user}}</h3>
           </div>
           <div class="time">
-            <h3>'time stamp'</h3>
+            <h3>{{help_readableTime}}</h3>
           </div>
         </div>
         <div class="question">
-          <h3>Q:</h3><h3 id="qTitle">I need help with javascript</h3>
+          <h3>Q:</h3><h3 id="qTitle">{{qTitle}}</h3>
         </div>
       </div>
     </header>
 
     <section>
-      <form class="questionForm" action="/qa:id" method="post">
-        <input class="problemTitle problemItems" type="string" name="title" placeholder="Give your answer a title...">
+      <form class="questionForm" action="/createAnswer" method="post">
 
-        <textarea  rows="10" class="problemDescription problemItems" type="text" name="body" placeholder="Add answer description here..."></textarea>
+        <textarea  rows="10" class="problemDescription problemItems" type="text" name="answer" placeholder="Add answer description here..."></textarea>
 
-        <input class="problemLink problemItems"type="string" name="link" placeholder="Attach a link if needed">
+        <input class="problemLink problemItems"type="string" name="link_1" placeholder="Attach a link if needed">
 
-        <input class="problemLink problemItems"type="string" name="link" placeholder="Attach a second link if needed">
+        <input class="problemLink problemItems"type="string" name="link_2" placeholder="Attach a second link if needed">
+
+        <input style="display:none;"type="string" name="help_id" value="{{id}}">
+
+        <input style="display:none;"type="string" name="user_id" value="{{user_id}}">
 
         <button class="problemSubmit" type="submit">Submit Your Answer!</button>
       </form>
