@@ -13,26 +13,29 @@ function checkGroup(group) {
 }
 
 function checkLogin(user) {
-  return db('users').first().where({'username': user.username, 'password': user.password});
+  return db('users').first().where({
+    'username': user.username,
+    'password': user.password
+  });
 }
 
 function getGroupName(group_id) {
-    return db('groups').first().where('id', group_id);
+  return db('groups').first().where('id', group_id);
 }
 
-function getHelps(group_id){
+function getHelps(group_id) {
   return db('helps').where('group_id', group_id);
 }
 
-function getHelpUser(user){
+function getHelpUser(user) {
   return db('users').first().where('id', user);
 }
 
-function getAnswers(help_id){
+function getAnswers(help_id) {
   return db('answers').where('help_id', help_id);
 }
 
-function getCategory(cat_id){
+function getCategory(cat_id) {
   return db('categories').where('id', cat_id);
 }
 
@@ -48,6 +51,10 @@ function createHelp(newHelp) {
   return db('helps').insert(newHelp).returning('*');
 }
 
+function createAnswer(newAnswer) {
+  return db('answers').insert(newAnswer).returning('*');
+}
+
 module.exports = {
   checkUser,
   createUser,
@@ -60,5 +67,7 @@ module.exports = {
   getCategory,
   getHelpInfo,
   getAnswerUser,
-  createHelp
+  createHelp,
+  createAnswer,
+
 };

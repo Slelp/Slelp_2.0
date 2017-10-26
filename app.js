@@ -32,7 +32,8 @@ var mainData = {
   group_name: '',
   user_id: 0,
   username: '',
-  helps: []
+  helps: [],
+  help_id: '',
 };
 
 app.use(bodyParser.urlencoded({
@@ -144,11 +145,11 @@ app.post('/qa/:id', (req, res) => {
                     getHelpAnswerUser(answer[i]);
                   }
 
-                    res.render('qa', theHelp);
-                    });
+                  res.render('qa', theHelp);
                 });
             });
         });
+    });
 });
 
 function getHelpAnswerUser(answer) {
@@ -203,23 +204,23 @@ var http = require('http');
 app.post('/createHelp', (req, res, next) => {
   //Posting to slack
   var proxyRequest = http.request({
-       host: 'https://hooks.slack.com',
-       port: 80,
-       method: 'POST',
-       path: '/services/T1T555TL0/B7NM8J2HJ/KpV4lGwjMn7wEjHFdOJhE1aO'
-     });
-    //  function (proxyResponse) {
-    //    proxyResponse.on('data', function () {
-    //      res.send(req.body.title);
-    //    });
+    host: 'https://hooks.slack.com',
+    port: 80,
+    method: 'POST',
+    path: '/services/T1T555TL0/B7NM8J2HJ/KpV4lGwjMn7wEjHFdOJhE1aO'
+  });
+  //  function (proxyResponse) {
+  //    proxyResponse.on('data', function () {
+  //      res.send(req.body.title);
+  //    });
 
 
-   proxyRequest.write(req.body.title);
-   proxyRequest.end();
-   //adding to database
-   next()
- });
- app.post('/createHelp', (req, res) => {
+  proxyRequest.write(req.body.title);
+  proxyRequest.end();
+  //adding to database
+  next()
+});
+app.post('/createHelp', (req, res) => {
   var newHelp = {
     group_id: mainData.group_id,
     title: req.body.title,
@@ -229,17 +230,34 @@ app.post('/createHelp', (req, res, next) => {
     timestamp: new Date().getTime(),
     readableTime: new Date(),
   };
-app.post
+  app.post ///////////////////////////////////////////////////////////////////////
 
   db.createHelp(newHelp)
-  .then(help => {
-    res.render('main')
-    console.log(help);
-  })
-  .catch(err => {console.log(err);})
+    .then(help => {
+      res.render('main')
+      console.log(help);
+    })
+    .catch(err => {
+      console.log(err);
+    })
 });
 
-
+app.post('/createAnswer', (req, res) => {
+  let newAnswer = {
+    help_id: mainData.help_id,
+    answer: req.body.body,
+    link_1: req.body.link,
+    link_2: req.body.link2,
+    user_id: mainData.user_id,
+    timestamp: new Date().getTime(),
+    readableTime: new Date(),
+  }
+  db.createAnswer(newAnswer)
+    .then(answer => {
+      console.log(answer);
+    })
+    .catch()
+})
 
 app.listen(port, () => console.log(`Slelp listening on port:
   ${port}`));
