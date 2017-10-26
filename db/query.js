@@ -40,6 +40,10 @@ function getCategory(cat_id){
   return db('categories').where('id', cat_id);
 }
 
+function getCategoryId(cat_name){
+  return db('categories').where('category_name', cat_name);
+}
+
 function getHelpInfo(help_id) {
   return db('helps').where('id', help_id);
 }
@@ -62,6 +66,7 @@ module.exports = {
   getHelpUser,
   getAnswers,
   getCategory,
+  getCategoryId,
   getHelpInfo,
   getAnswerUser,
   createHelp,
