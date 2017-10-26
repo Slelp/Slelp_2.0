@@ -191,6 +191,9 @@ section{
   flex-direction: column;
   justify-content: space-around;
 }
+.solutions:last-child{
+  margin-bottom: 5rem;
+}
 .solution{
   height: 100%;
   margin: 2rem;
