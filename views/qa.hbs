@@ -27,14 +27,14 @@
       <div id="user-time-question">
         <div class="user-time">
           <div class="username">
-            <h3>'username'</h3>
+            <h3>{{help_user}}</h3>
           </div>
           <div class="time">
-            <h3>'time stamp'</h3>
+            <h3>{{help_readableTime}}</h3>
           </div>
         </div>
         <div class="question">
-          <h3>Q:</h3><h3> 'question'</h3>
+          <h3>Q:</h3><h3>{{qTitle}}</h3>
         </div>
       </div>
     </header>
@@ -43,11 +43,11 @@
       <div class="container">
         <div class="question-description">
           <div class="help-description">
-            <h3>this is the description of the question</h3>
+            <h3>{{description}}</h3>
           </div>
 
           <div class="description-links">
-            <a class="link" href="#">
+            <a class="link" href="{{help_link}}">
               <h3>< / ></h3>
             </a>
           </div>
@@ -57,32 +57,33 @@
           <div class="solutions-header">
             <h3>Solutions</h3>
           </div>
-
+          {{#each theAnswer}}
           <div class="solution">
             <div class="solution-user user-time">
               <div class="solution-username username">
-                <h3>'username'</h3>
+                <h3>{{answer_user}}</h3>
               </div>
               <div class="solution-time time">
-                <h3>'time stamp'</h3>
+                <h3>{{answer_readableTime}}</h3>
               </div>
             </div>
 
             <div class="solution-description">
               <div class="answer-description">
-                <h3>this is the answer description </h3>
+                <h3>{{answer}}</h3>
               </div>
 
               <div class="answer-links">
-                <a class="link" href="#">
+                <a class="link" href="{{answer_link_1}}">
                   <h3>YouTube</h3>
                 </a>
-                <a class="link" href="#">
+                <a class="link" href="{{answer_link_2}}">
                   <h3>< / ></h3>
                 </a>
               </div>
             </div>
           </div>
+          {{/each}}
 
         </div>
       </div>

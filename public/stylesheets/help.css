@@ -107,6 +107,13 @@ footer {
   font-family: 'Rokkitt', serif;
   letter-spacing: 2px;
 }
+.title-categories{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 88vw;
+}
 .questionForm{
   display: flex;
   flex-direction: column;
@@ -115,10 +122,21 @@ footer {
   margin: 15px;
   margin-top: 5rem;
 }
-.problemTitle{
+#problemTitle{
   height: 5vh;
   margin: 5px;
   margin-bottom: 2rem;
+  width: 60%;
+}
+#category{
+  height: 6.2vh;
+  margin: 5px;
+  margin-bottom: 2rem;
+  width: 40%;
+  border-radius: 1px;
+}
+select{
+  appearance: arrow;
 }
 .problemItems{
   background-color: rgba(0, 0, 0, .7);
