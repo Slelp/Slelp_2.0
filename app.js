@@ -90,6 +90,22 @@ app.post('/', (req, res) => {
     });
 });
 
+function poopulateMain(group_id) {
+
+  db.getHelps(group_id)
+    .then(helps => {
+      while (mainData.helps.length > helps.length) {
+        mainData.helps.pop();
+      }
+      for (var i = 0; i < helps.length; i++) {
+        cleanHelps(helps[i]);
+      }
+      // console.log(mainData);
+      return;
+
+    });
+}
+
 app.post('/main', (req, res) => {
   db.checkLogin(req.body)
     .then(user => {
@@ -122,6 +138,7 @@ app.post('/main', (req, res) => {
     });
 });
 
+
 function cleanHelps(oneHelp) {
   var help = {
     help_id: oneHelp.id,
@@ -131,6 +148,7 @@ function cleanHelps(oneHelp) {
     solution: 0,
     category: oneHelp.category_id
   };
+  // console.log(`151 : ${help}`);
   db.getHelpUser(oneHelp.user_id)
     .then(username => {
       help.helpUser = username.username;
@@ -143,10 +161,30 @@ function cleanHelps(oneHelp) {
           }
           db.getCategory(oneHelp.category_id)
             .then(cat => {
+              // console.log(cat);
+              var flag = true;
               help.category = cat[0].category_name;
-              console.log(help.category);
-              mainData.helps.push(help);
+              console.log(mainData.helps);
+              for (var i = 0; i < mainData.helps.length; i++) {
+                console.log(`168 : ${mainData.helps[i].qTitle}`);
+                console.log(`169 : ${help.qTitle}`);
+                if (mainData.helps[i].qTitle === help.qTitle) {
+                  flag = false;
+                  console.log(`167 : ${flag}`);
+                }
+              }
+              if (flag) {
+                // console.log(`173 : ${mainData.helps}`);
+                mainData.helps.push(help);
+                }
+                // for (var i = 0; i < mainData.helps.length; i++) {
+                //   if (mainData.helps[i].)
+                //   mainData.helps[i]
+              // }
               return;
+            })
+            .catch(err => {
+              console.log(err);
             });
         });
     });
@@ -202,7 +240,7 @@ function getHelpAnswerUser(answer) {
     .then(user => {
       answerData.answer_user = user[0].username;
       theHelp.theAnswer.push(answerData);
-      console.log(theHelp);
+      // console.log(theHelp);
       return;
     });
 }
@@ -239,19 +277,23 @@ app.post('/createHelp', (req, res) => {
     timestamp: new Date().getTime(),
     readableTime: new Date(),
   };
-db.getCategoryId(newHelp.category_id)
-.then(cat_id => {
-  newHelp.category_id = cat_id.id;
-  db.createHelp(newHelp)
-    .then(help => {
-      // db.getCategories(help.category_id)
-      // .then(categories{
-      //   mainData.categories = categories
-      console.log(help);
-        res.render('main', mainData);
-})
+  console.log(req.body.category);
+  db.getCategoryId(newHelp.category_id)
+    .then(cat_id => {
+      console.log(cat_id);
+      newHelp.category_id = cat_id[0].id;
+      db.createHelp(newHelp)
+        .then(help => {
+          // db.getCategories(help.category_id)
+          // .then(categories{
+          //   mainData.categories = categories
+          // console.log(help);
+          poopulateMain(mainData.group_id);
+          res.render('main', mainData);
+          // res.render('main', mainData);
+        })
 
-      })
+    })
     .catch(err => {
       console.log(err);
     });
