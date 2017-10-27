@@ -43,7 +43,7 @@ function getCategory(cat_id) {
   return db('categories').where('id', cat_id);
 }
 
-function getCategoryId(cat_name){
+function getCategoryId(cat_name) {
   return db('categories').where('category_name', cat_name);
 }
 
@@ -59,7 +59,7 @@ function createHelp(newHelp) {
   return db('helps').insert(newHelp).returning('*');
 }
 
-function createAnswer(answer){
+function createAnswer(answer) {
   return db('answers').insert(answer).returning('*');
 
 }
