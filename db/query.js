@@ -59,8 +59,9 @@ function createHelp(newHelp) {
   return db('helps').insert(newHelp).returning('*');
 }
 
-function createAnswer(newAnswer) {
-  return db('answers').insert(newAnswer).returning('*');
+function createAnswer(answer) {
+  return db('answers').insert(answer).returning('*');
+
 }
 
 module.exports = {
@@ -78,6 +79,6 @@ module.exports = {
   getAnswerUser,
   createHelp,
   createAnswer,
-  getUser
+  getUser,
 
 };

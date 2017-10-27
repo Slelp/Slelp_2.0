@@ -9,8 +9,10 @@
   <body>
     <header>
       <div class="user-info">
-        <form class="form-logo" action="/main" method="get">
+        <form class="form-logo" action="/main" method="post">
           <button>
+            <input type="text" style="display: none;" name="username" value="{{username}}">
+            <input type="text" style="display: none;" name="password" value="{{password}}">
             <div id="logo">
               <h1>Slelp</h1>
             </div>
@@ -26,10 +28,7 @@
 
       <div class="user-time">
         <div class="username">
-          <h3>'username'</h3>
-        </div>
-        <div class="time">
-          <h3>'time stamp'</h3>
+          <h3>{{username}}</h3>
         </div>
       </div>
 
@@ -38,17 +37,19 @@
           <input id="problemTitle"class="problemItems" type="string" name="title" placeholder="Give your help a title...">
 
           <select id="category" class="problemItems" name="category">
-            <option value="misc">Select a Category</option>
-            <option value="html">HTML</option>
-            <option value="css">CSS</option>
-            <option value="javascript">JavaScript</option>
-            <option value="express">Express</option>
+            <option value="Misc">Select a Category</option>
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="Express.js">Express.js</option>
+            <option value="Node.js">Node.js</option>
           </select>
         </div>
 
 
         <textarea  rows="10" class="problemDescription problemItems" type="text" name="body" placeholder="Describe your problem in detail"></textarea>
         <input class="problemLink problemItems"type="string" name="link" placeholder="Attach a link if needed">
+        <input style="display:none;" name="user_id" value="{{user_id}}">
         <button class="problemSubmit" type="submit">Post Your Help Request!</button>
       </form>
     </section>
