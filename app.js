@@ -28,11 +28,12 @@ var theHelp = {
 };
 
 var mainData = {
-  // group_id: 0,
-  // group_name: '',
-  // user_id: 0,
-  // username: '',
-  helps: []
+  group_id: 0,
+  group_name: '',
+  user_id: 0,
+  username: '',
+  helps: [],
+  help_id: '',
 };
 
 app.use(bodyParser.urlencoded({
@@ -264,6 +265,7 @@ app.post('/createHelp', (req, res) => {
     timestamp: new Date().getTime(),
     readableTime: new Date(),
   };
+
   newHelp.readableTime = newHelp.readableTime.toString().split('T');
   newHelp.readableTime = newHelp.readableTime[0];
   console.log(req.body.category);
@@ -274,6 +276,7 @@ app.post('/createHelp', (req, res) => {
       db.createHelp(newHelp)
         .then(help => {
           poopulateMain(mainData.group_id);
+
           res.render('main', mainData);
         })
 
@@ -282,6 +285,7 @@ app.post('/createHelp', (req, res) => {
       console.log(err);
     });
 });
+
 
 app.post('/createAnswer', (req,res)=> {
   db.createAnswer(req.body)
@@ -297,6 +301,7 @@ app.get('/answer', (req, res) => {
 app.get('/help', (req, res) => {
   res.render('help', mainData);
 });
+
 
 app.listen(port, () => console.log(`Slelp listening on port:
   ${port}`));
