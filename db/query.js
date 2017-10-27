@@ -43,7 +43,7 @@ function getCategory(cat_id) {
   return db('categories').where('id', cat_id);
 }
 
-function getCategoryId(cat_name){
+function getCategoryId(cat_name) {
   return db('categories').where('category_name', cat_name);
 }
 
@@ -77,10 +77,7 @@ module.exports = {
   getHelpInfo,
   getAnswerUser,
   createHelp,
-<<<<<<< HEAD
   createAnswer,
-
-=======
   getUser
->>>>>>> 59539e84176552bfec0ee0752394d2107415886d
+
 };
