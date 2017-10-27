@@ -1,7 +1,7 @@
 # Slelp App
 ## Screenshots
 ![home page](/images/homePage.png)
-![information about slelp](/images/welcome.png)
+![information about slelp](/images/Welcome.png)
 ![Main helps page](/images/Helps.png)
 ## Walk through and deployed app
 - [Youtube walk through](https://www.youtube.com/watch?v=evBG8hgMP0U)
