@@ -58,7 +58,15 @@ function getUserGroupInfo(userId) {
   return db('users').where('users.id', userId).select().innerJoin('groups', 'users.group_id', 'groups.id')
 }
 
+function getHelpInfoCat(help_id) {
+  return db('helps').select('helps.id as help_id', 'helps.user_id as help_user_id', 'helps.readableTime as help_time', '*').where('helps.id', help_id)
+    .innerJoin('users', 'users.id', 'helps.user_id')
+    .innerJoin('categories', 'categories.id', 'helps.category_id');
+}
 
+function editHelp(id, data) {
+  return db('helps').where('id', id).update(data)
+}
 module.exports = {
   checkUser,
   createUser,
@@ -73,5 +81,6 @@ module.exports = {
   createAnswer,
   getUserGroupInfo,
   getHelpAnswers,
-
+  getHelpInfoCat,
+  editHelp,
 };

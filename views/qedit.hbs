@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/stylesheets/help.css">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans|Pacifico|Rokkitt" rel="stylesheet">
+    <title>Slelp</title>
+  </head>
+  <body>
+    <header>
+      <div class="user-info">
+
+
+
+        <!-- <form class="form-logo" action="/main" method="post">
+          <button>
+            <input type="text" style="display: none;" name="username" value="{{username}}">
+            <input type="text" style="display: none;" name="password" value="{{password}}"> -->
+            <a href="/helps">
+            <div id="logo" class="form-logo">
+              <h1>Slelp</h1>
+            </a>
+
+            <!-- </div>
+          </button>
+        </form> -->
+
+
+
+
+        <div class="group">
+          <h1>Create A Help</h1>
+        </div>
+      </div>
+    </header>
+
+    <section>
+
+      <div class="user-time">
+        <div class="username">
+          <h3>{{username}}</h3>
+        </div>
+      </div>
+
+      <form class="questionForm" action="/edit/q/{{question.help_id}}?_method=PUT" method="post">
+        <div class="title-categories">
+          <input required id="problemTitle"class="problemItems" type="string" name="title" value="{{question.title}}">
+
+          <select id="category" class="problemItems" name="category_id">
+            <option value="{{question.category_name}}">Current: {{question.category_name}}</option>
+            <option value="Misc">Misc</option>
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="Express.js">Express.js</option>
+            <option value="Node.js">Node.js</option>
+          </select>
+        </div>
+
+
+        <textarea  required rows="10" class="problemDescription problemItems" type="text" name="description">{{question.description}}</textarea>
+        <input value="{{question.link}}"class="problemLink problemItems"type="string" name="link" placeholder="Attach a link if needed">
+        <input style="display:none;" name="user_id" value="{{question.help_user_id}}">
+        <button class="problemSubmit" type="submit">Update Help Request!</button>
+      </form>
+    </section>
+
+    <footer>
+      <div class="foot">
+        <a href="https://github.com/Slelp/slelp"><h3>&copy;PFC, inc.</h3></a>
+      </div>
+    </footer>
+  </body>
+</html>

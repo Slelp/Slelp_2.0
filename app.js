@@ -7,6 +7,7 @@ const port = process.env.PORT || 3000;
 const app = express();
 const solutions = require('./solutions')
 const post = require('./post');
+const methodOverride = require('method-override')
 
 // var mainData = {
 //   group_id: 0,
@@ -24,6 +25,9 @@ var mainData = {
   helps: [],
   help_id: ''
 };
+
+
+app.use(methodOverride('_method'))
 
 app.use(bodyParser.urlencoded({
   extended: false
@@ -60,7 +64,7 @@ app.post('/', (req, res) => {
               createError: 'Account created. Confirm login below.'
             });
           }).catch(err => {
-            console.log(err);
+            console.error(err);
           });
         }
       });
@@ -70,7 +74,7 @@ app.post('/', (req, res) => {
       });
     }
   }).catch(err => {
-    console.log(err);
+    console.error(err);
   });
 });
 
@@ -108,7 +112,6 @@ app.get('/helps', (req, res) => {
                 helps: helps,
                 group: group[0],
               }
-              // console.log('118: data: ',data);
               res.render('main', data)
             })
         })
@@ -128,11 +131,9 @@ app.get('/qa/:id', (req, res) => {
         group_name: mainData.group_name,
       }
       res.render('qa', data)
-      console.log('184: data: ', data);
     })
   })
 })
-
 
 app.post('/createHelp', (req, res) => {
   var newHelp = {
@@ -151,7 +152,7 @@ app.post('/createHelp', (req, res) => {
       newHelp.category_id = cat_id[0].id;
       db.createHelp(newHelp)
         .then(help => {
-          post.post(newHelp.title)
+          // post.post(newHelp.title)
           res.redirect('/helps');
         })
     }).catch(err => {
@@ -160,7 +161,6 @@ app.post('/createHelp', (req, res) => {
 });
 
 app.post('/createAnswer', (req, res) => {
-  console.log(req.body);
   req.body.timestamp = new Date().getTime();
   req.body.readableTime = solutions.fixTime(new Date());
   db.createAnswer(req.body).then(answer => {
@@ -169,24 +169,47 @@ app.post('/createAnswer', (req, res) => {
 })
 
 app.get('/answer/:id', (req, res) => {
-
-
   db.getHelpInfo(req.params.id)
     .then(help => {
       let data = {
         help: help[0],
         user: mainData.user_id,
       }
-
-      console.log("291 data: ", data, mainData);
       res.render('answer', data);
-
     })
 })
 
 app.get('/help', (req, res) => {
   res.render('help', mainData);
 });
+
+app.get('/edit/q/:id', (req, res) => {
+  db.getHelpInfoCat(req.params.id)
+    .then(helps => {
+      let data = {
+        question: helps[0],
+        group_name: mainData.group_name,
+      }
+      console.log(data);
+      res.render('qedit', data)
+    })
+})
+
+app.put('/edit/q/:id', (req, res) => {
+  console.log('200: req.body:', req.body)
+  req.body.timestamp = new Date().getTime()
+  req.body.readableTime = solutions.fixTime(new Date())
+  req.body.group_id = mainData.group_id
+  db.getCategoryId(req.body.category_id)
+    .then(catId => {
+      req.body.category_id = catId[0].id
+      console.log(req.body);
+      db.editHelp(req.params.id, req.body)
+        .then(data => {
+          res.redirect('/helps')
+        })
+    })
+})
 
 app.listen(port, () => console.log(`Slelp listening on port:
   ${port}`));
