@@ -29,15 +29,16 @@ function getGroupName(group_id) {
 
 function getHelps(group_id) {
   return db('helps').select('helps.id as help_id', '*').where('helps.group_id', group_id)
-  .innerJoin('users', 'helps.user_id', 'users.id');
+  .innerJoin('users', 'helps.user_id', 'users.id')
 }
 
 function getHelpUser(id) {
   return db('users').first().where('id', id);
 }
 
-function getAnswers(help_id) {
-  return db('answers').where('help_id', help_id);
+function getAnswers(group_id) {
+  return db('helps').select('helps.id as help_id', '*').where('helps.group_id', group_id)
+  .innerJoin('users', 'helps.user_id', 'users.id').innerJoin('answers','answers.help_id', 'helps.id');
 }
 
 function getCategory(cat_id) {
@@ -53,10 +54,13 @@ function getHelpUserName(id){
 }
 
 function getHelpInfo(help_id) {
-  return db('helps').select('helps.id as help_id', 'helps.user_id as help_user_id', '*').where('helps.id', help_id).innerJoin('answers', 'helps.id','answers.help_id')
-  .innerJoin('users','users.id', 'answers.user_id');
+  return db('helps').select('helps.id as help_id', 'helps.user_id as help_user_id', 'helps.readableTime as help_time','*').where('helps.id', help_id)
+  .innerJoin('users','users.id', 'helps.user_id');
 }
 
+function getHelpAnswers(help_id) {
+  return db('answers').select('*').where('answers.help_id', help_id).innerJoin('users', 'users.id','answers.user_id')
+}
 
 function getAnswerUser(id) {
   return db('users').where('id', id);
@@ -73,6 +77,7 @@ function createAnswer(answer) {
 function getUserGroupInfo(userId){
   return db('users').where('users.id', userId).select().innerJoin('groups', 'users.group_id', 'groups.id')
 }
+
 
 module.exports = {
   checkUser,
@@ -92,5 +97,6 @@ module.exports = {
   getUser,
   getHelpUserName,
   getUserGroupInfo,
+  getHelpAnswers,
 
 };

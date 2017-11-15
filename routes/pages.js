@@ -8,20 +8,12 @@ router.get('/', (req, res) => {
   });
 });
 
-router.get('/main', (req, res) => {
-  res.render('main');
-});
-
-// router.get('/help', (req, res) => {
-//   res.render('help');
+// router.get('/main', (req, res) => {
+//   res.render('main');
 // });
 
-// router.get('/answer', (req, res) => {
-//   res.render('answer');
+// router.get('/qa', (req, res) => {
+//   res.render('qa');
 // });
-
-router.get('/qa', (req, res) => {
-  res.render('qa');
-});
 
 module.exports = router;

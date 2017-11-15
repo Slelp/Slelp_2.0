@@ -10,15 +10,13 @@
   <body>
     <header>
       <div class="user-info">
-        <form class="form-logo" action="/main" method="post">
-          <button>
-            <input type="text" style="display: none;" name="username" value="{{username}}">
-            <input type="text" style="display: none;" name="password" value="{{password}}">
-            <div id="logo">
+         <a href="/helps">
+            <div id="logo" class="form-logo">
               <h1>Slelp</h1>
             </div>
-          </button>
-        </form>
+          </a>
+
+
 
         <div class="group">
           <h1>{{group.group_name}}</h1>
@@ -33,11 +31,12 @@
           </button>
         </form>
 
-        <form class="form-search" action="index.html" method="post">
+        <div class="form-search">
           <button class="search">
+            <input type="text" id="search-bar"placeholder="search helps" onkeyup="searchHelps()">
             <img class="search-img" src="/images/VisualEditor_-_Icon_-_Search-big_-_white.svg.png" alt="">
           </button>
-        </form>
+        </div>
 
       </div>
     </header>
@@ -45,7 +44,7 @@
     <section>
       <div class="container">
         {{#each helps}}
-        <form class="form-help-container" action="/qa/{{help_id}}" method="post">
+        <a class="form-help-container" href="/qa/{{help_id}}">
           <button class="help-container">
 
             <div class="username-time">
@@ -64,10 +63,10 @@
             </div>
 
             <div class="solutions-answerbtn">
-              <h5>Solutions: {{solution}}</h5>
+              <h5>Solutions: {{answersLength}}</h5>
             </div>
           </button>
-        </form>
+        </a>
         {{/each}}
       </div>
     </section>
@@ -77,5 +76,8 @@
         <a href="https://github.com/Slelp/slelp"><h3>&copy;PFC, inc.</h3></a>
       </div>
     </footer>
+    <script type="text/javascript" src="/javascript/main.js">
+
+    </script>
   </body>
 </html>

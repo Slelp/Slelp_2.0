@@ -9,15 +9,25 @@
   <body>
     <header>
       <div class="user-info">
-        <form class="form-logo" action="/main" method="post">
+
+
+
+        <!-- <form class="form-logo" action="/main" method="post">
           <button>
             <input type="text" style="display: none;" name="username" value="{{username}}">
-            <input type="text" style="display: none;" name="password" value="{{password}}">
-            <div id="logo">
+            <input type="text" style="display: none;" name="password" value="{{password}}"> -->
+            <a href="/helps">
+            <div id="logo" class="form-logo">
               <h1>Slelp</h1>
-            </div>
+            </a>
+
+            <!-- </div>
           </button>
-        </form>
+        </form> -->
+
+
+
+
         <div class="group">
           <h1>Create A Help</h1>
         </div>
@@ -34,7 +44,7 @@
 
       <form class="questionForm" action="/createHelp" method="post">
         <div class="title-categories">
-          <input id="problemTitle"class="problemItems" type="string" name="title" placeholder="Give your help a title...">
+          <input required id="problemTitle"class="problemItems" type="string" name="title" placeholder="Give your help a title...">
 
           <select id="category" class="problemItems" name="category">
             <option value="Misc">Select a Category</option>
@@ -47,7 +57,7 @@
         </div>
 
 
-        <textarea  rows="10" class="problemDescription problemItems" type="text" name="body" placeholder="Describe your problem in detail"></textarea>
+        <textarea  required rows="10" class="problemDescription problemItems" type="text" name="body" placeholder="Describe your problem in detail"></textarea>
         <input class="problemLink problemItems"type="string" name="link" placeholder="Attach a link if needed">
         <input style="display:none;" name="user_id" value="{{user_id}}">
         <button class="problemSubmit" type="submit">Post Your Help Request!</button>

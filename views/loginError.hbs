@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/loginError.css">
   <link href="https://fonts.googleapis.com/css?family=Droid+Sans|Pacifico|Rokkitt" rel="stylesheet">
   <title>Slelp</title>
 </head>
@@ -92,23 +92,25 @@
 
           </div>
         </div>
+    </div>
   </div>
+
+      <div class="modal">
+          <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h1 class="big">AUTHENTICATION FAILED</h1>
+          <h1>{{createError}}</h1>
+          <h1>{{loginError}}</h1>
+        </div>
+      </div>
+
   <main>
 
       <div id="container">
         <div id="login-container">
           <div id="logo">
             <h1>Slelp App</h1>
-          </div>
-
-          <!-- Future Error Pop-Up -->
-          <div id="myModal" class="modal">
-              <!-- Modal content -->
-            <div class="modal-content">
-              <span class="close">&times;</span>
-              <h1>{{createError}}</h1>
-              <h1>{{loginError}}</h1>
-            </div>
           </div>
 
           <div class="login-create-box">
@@ -157,7 +159,7 @@
       <a href="https://github.com/Slelp/slelp"><h3>&copy;PFC, inc.</h3></a>
     </div>
   </footer>
-<script type="text/javascript" src="/javascript/index.js"></script>
+<script type="text/javascript" src="/javascript/loginError.js"></script>
 </body>
 
 </html>

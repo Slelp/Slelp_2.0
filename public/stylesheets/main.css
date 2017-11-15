@@ -77,15 +77,26 @@ header {
 }
 .add-help, .search {
   height: 100%;
-  width: 80%;
+  width: 90%;
   border: .5px solid black;
   border-radius: 10px;
   background-color: #D98324;
   display: flex;
   justify-content: center;
   align-items: center;
-  /*box-shadow: 0px 0px 15px #212121;*/
   color: white;
+}
+#search-bar {
+  display: none;
+  width: 100%;
+  font-size: 4em;
+  background: transparent;
+  border: none;
+  color: white;
+  padding-left: .5em;
+}
+input:focus {
+  outline: none;
 }
 .search-img {
   height: 7.5rem;
@@ -151,9 +162,10 @@ section{
 }
 a{
   font-size: 32px;
+  text-decoration: none;
   /*border: 1px solid black;*/
   border-radius: 15px;
-  background-color: orange;
+  /*background-color: orange;*/
   text-align: center;
 }
 h3 {

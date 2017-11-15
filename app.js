@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const db = require('./db/query');
 const port = process.env.PORT || 3000;
 const app = express();
+const solutions = require('./solutions')
 // const indexjs = require('./public/javascript/index.js');
 
 // var theHelp = {
@@ -22,10 +23,10 @@ const app = express();
 // };
 
 var mainData = {
-  group_id: 0,
-  group_name: '',
-  user_id: 0,
-  username: '',
+  group_id: 1,
+  group_name: 'g64',
+  user_id: 3,
+  username: 'Kyle',
   helps: [],
   help_id: ''
 };
@@ -97,28 +98,30 @@ app.post('/main', (req, res) => {
       db.getGroupName(user.group_id).then(group => {
         mainData.group_name = group.group_name;
         db.getHelps(group.id).then(nothing => {
-            res.redirect('/helps/'+user.id);
-
+            res.redirect('/helps');
           })
-
       });
     }
   });
 });
 
-app.get('/helps/:id', (req, res) => {
-  db.getUserGroupInfo(req.params.id)
+app.get('/helps', (req, res) => {
+  db.getUserGroupInfo(mainData.user_id)
   .then(group=>{
-    console.log(group);
-  db.getHelps(mainData.group_id).then(helps =>
+  db.getHelps(mainData.group_id)
+  .then(helps=>{
+    db.getAnswers(mainData.group_id)
+  .then(answers =>
     {
-      console.log(helps);
+    helps = solutions.mapAnswers(helps, answers)
     data = {
       helps: helps,
       group: group[0],
     }
+    // console.log('118: data: ',data);
     res.render('main', data)})
   })
+})
 })
 
 // function loadHelpsList(helps) {
@@ -170,13 +173,23 @@ app.get('/helps/:id', (req, res) => {
 //   });
 // }
 
-app.post('/qa/:id', (req, res) => {
+app.get('/qa/:id', (req, res) => {
   db.getHelpInfo(req.params.id).then(help => {
-    db.getHelpUserName(help[0].help_user_id)
-    .then(user=>{
-      console.log(user);
-      console.log(help);
+      db.getHelpAnswers(req.params.id).then(answers => {
+        for (var i = 0; i < answers.length; i++) {
+          answers[i].readableTime = solutions.fixTime(answers[i].readableTime);
+        }
+        help[0].readableTime = solutions.fixTime(help[0].readableTime);
+      let data = {
+        question: help[0],
+        answers: answers,
+        group_name: mainData.group_name,
+      }
+      res.render('qa', data)
+      console.log('184: data: ', data);
     })
+  })
+})
   //   theHelp.username = mainData.username;
   //   theHelp.user_id = mainData.user_id;
   //   theHelp.password = mainData.password;
@@ -211,8 +224,7 @@ app.post('/qa/:id', (req, res) => {
   //     });
   //   });
   // });
-})
-})
+
 
 function getHelpAnswerUser(answer) {
   var answerData = {
@@ -240,7 +252,7 @@ function getHelpAnswerUser(answer) {
   });
 }
 
-app.post('/createHelp/:id/:id', (req, res) => {
+app.post('/createHelp', (req, res) => {
   var newHelp = {
     group_id: mainData.group_id,
     title: req.body.title,
@@ -251,12 +263,12 @@ app.post('/createHelp/:id/:id', (req, res) => {
     timestamp: new Date().getTime(),
     readableTime: new Date()
   };
-
-  newHelp.readableTime = newHelp.readableTime.toString().split('T');
-  newHelp.readableTime = newHelp.readableTime[0];
-  db.getCategoryId(newHelp.category_id).then(cat_id => {
+  newHelp.readableTime = solutions.fixTime(newHelp.readableTime);
+  db.getCategoryId(newHelp.category_id)
+  .then(cat_id => {
     newHelp.category_id = cat_id[0].id;
-    db.createHelp(newHelp).then(help => {
+    db.createHelp(newHelp)
+    .then(help => {
         res.redirect('/helps');
     })
   }).catch(err => {
@@ -265,13 +277,28 @@ app.post('/createHelp/:id/:id', (req, res) => {
 });
 
 app.post('/createAnswer', (req, res) => {
+  console.log(req.body);
+  req.body.timestamp = new Date().getTime();
+  req.body.readableTime = solutions.fixTime(new Date());
   db.createAnswer(req.body).then(answer => {
-    res.redirect('/main');
+    res.redirect('/helps');
   })
 })
 
-app.get('/answer', (req, res) => {
-  res.render('answer', theHelp);
+app.get('/answer/:id', (req, res) => {
+
+
+  db.getHelpInfo(req.params.id)
+  .then(help=>{
+    let data = {
+      help: help[0],
+      user: mainData.user_id,
+    }
+
+    console.log("291 data: ",data , mainData);
+    res.render('answer', data);
+
+  })
 })
 
 app.get('/help', (req, res) => {

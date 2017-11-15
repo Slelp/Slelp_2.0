@@ -45,18 +45,21 @@ header {
   padding-right: 2rem;
 }
 #logo{
-  width: 33%;
+  width: 100%;
   height: 8rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  color: #DD7016;
   font-family: 'Pacifico', cursive;
   font-size: 40px;
   text-shadow: 2px 2px white;
 }
+a {
+  text-decoration: none;
+  color: #DD7016;
+}
 .form-logo{
-  margin-left: 6rem;
+  margin-left: 3.4rem;
   margin-bottom: .5rem;
 }
 .group{
