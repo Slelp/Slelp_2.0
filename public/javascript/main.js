@@ -38,8 +38,7 @@ function searchHelps() {
             helps[i].style.display = "";
         } else {
           console.log(helps);
-            helps[i].parentElement.parentElement.style.display = "none";
-
+          helps[i].parentElement.parentElement.style.display = "none";
         }
     }
 }
