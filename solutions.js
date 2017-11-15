@@ -7,13 +7,13 @@ function mapAnswers(helps, answers) {
   for (var i = 0; i < helps.length; i++) {
     helps[i].answers = [];
     for (var j = 0; j < answers.length; j++) {
-      if (helps[i].help_id === answers[j].help_id ) {
+      if (helps[i].help_id === answers[j].help_id) {
         helps[i].answers.push(answers[j])
       }
     }
     if (helps[i].answers.length > 0) {
       helps[i].answersLength = helps[i].answers.length
-    }else{
+    } else {
       helps[i].answersLength = 'NEEDED!!!!!!!!'
     }
 
@@ -21,10 +21,8 @@ function mapAnswers(helps, answers) {
   return helps
 }
 
-function fixTime(time){
-  console.log('solution 25: time', time);
+function fixTime(time) {
   time = time.toString().split(':')
-  console.log('solution 27: time', time);
   time = time[0] + ':' + time[1];
   return time;
 }

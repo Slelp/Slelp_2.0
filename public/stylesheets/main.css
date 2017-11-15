@@ -66,7 +66,7 @@ header {
   display: none !important;
 }*/
 .form-help, .form-search{
-  width: 50%;
+  width: 48%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,7 +77,7 @@ header {
 }
 .add-help, .search {
   height: 100%;
-  width: 90%;
+  width: 100%;
   border: .5px solid black;
   border-radius: 10px;
   background-color: #D98324;
