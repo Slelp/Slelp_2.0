@@ -305,6 +305,9 @@
 .desktopInfo{
   display: flex !important;
 }
+#create, #login {
+  display: flex;
+}
 #login-container{
   display: flex;
   justify-content: center;
@@ -350,4 +353,7 @@ input{
   height: 12rem;
   width: 12rem;
 }
-  }
+.github-links{
+  margin-bottom: 3rem;
+}
+}

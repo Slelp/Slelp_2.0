@@ -19,11 +19,11 @@ function toggleLoginForm() {
 }
 
 function openNav() {
-    document.getElementById("mySidenav").style.width = "80%";
-    document.getElementById('info').style.display = 'none';
+  document.getElementById("mySidenav").style.width = "80%";
+  document.getElementById('info').style.display = 'none';
 }
 
 function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById('info').style.display = 'flex';
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById('info').style.display = 'flex';
 }

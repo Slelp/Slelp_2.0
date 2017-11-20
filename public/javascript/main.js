@@ -5,32 +5,26 @@ const addHelpText = document.getElementsByClassName("addHelp")[0]
 const searchBar = document.getElementById('search-bar');
 const searchIcon = document.getElementsByClassName('search-img')[0];
 const addHelpPlus = document.getElementsByClassName('addHelpPlus')[0];
+// const helpContainer = document.getElementsByClassName('form-help-container')
+// helpContainer[i].style.visibility = 'hidden'
 
+// helpContainer.style.visibility = 'hidden'
+
+// window.setTimeout(function(){
+//   for (var i = 0; i < helpContainer.length; i++) {
+//     let vis = helpContainer[i].style.visibility = 'visible'
+//   }, 1000);
+  // helpContainer.style.visibility = 'visible'
+// }
 
 function initiateSearch() {
-  if (searchBar.style.display = 'none') {
-    searchBtn.style.width = '80%'
-    addHelpBtn.style.width = '18%'
-    addHelpText.style.display = 'none'
-    addHelpPlus.style.fontSize = '100px'
-    addHelpPlus.style.margin = '0'
-    searchBar.style.display = 'block'
-    searchBtn.removeEventListener("click", initiateSearch)
-  }
-
+  searchBtn.style.width = '80%'
+  addHelpBtn.style.width = '18%'
+  addHelpText.style.display = 'none'
+  addHelpPlus.style.fontSize = '100px'
+  addHelpPlus.style.margin = '0'
+  searchBar.style.display = 'block'
 }
-searchIcon.addEventListener("click", closeSearch)
-
-function closeSearch() {
-  if (searchBar.style.display = 'block') {
-    searchBtn.style.width = '50%'
-    searchBar.style.display = 'none'
-    addHelpBtn.style.display = 'flex'
-    searchBtn.addEventListener("click", initiateSearch)
-  }
-
-}
-
 
 function searchHelps() {
   const input = document.getElementById('search-bar')
@@ -45,7 +39,6 @@ function searchHelps() {
       helps[i].style.display = "";
     } else {
       helps[i].parentElement.parentElement.style.display = "none";
-
     }
   }
 }
